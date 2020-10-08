@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :stores
-  devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :stores, controllers: {
+  	sessions: 'stores/sessions',
+  	passwords: 'stores/passwords',
+  	registrations: 'stores/registrations'
+  }
+
+  devise_for :users, controllerrs: {
+  	sessions: 'user/sessions',
+  	passwords: 'users/passwords',
+  	registrations: 'users/registrations'
+  }
+
+
 end

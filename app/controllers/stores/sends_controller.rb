@@ -3,13 +3,14 @@ class Stores::SendsController < ApplicationController
   def index
   end
 
-  def shoe
+  def show
   end
 
   def create
   end
 
   def edit
+    @send = Send.new
   end
 
   def update

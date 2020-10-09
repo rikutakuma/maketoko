@@ -10,6 +10,57 @@
   </head>
 
   <body>
+
+    <header class="navbar navbar-fixed-top">
+      <div class="container">
+      <nav class="nav navbar-nav navbar-left">
+        <span class="Logo"><%= link_to "MAKETOKO", class: "Logolink" %></span>
+      </nav>
+
+        <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+
+            <li class="header-link"><%= link_to "About", "" %></li>
+
+            <li class="header-link"><%= link_to "ランキング", "" %></li>
+
+            <li class="header-link"><%= link_to "店舗一覧", "" %></li>
+
+            <li class="header-link"><%= link_to "マイページ", "" %></li>
+
+            <li class="header-link"><%= link_to "ログアウト", "" %></li>
+
+            <% elsif store_signed_in? %>
+
+            <li class="header-link"><%= link_to "About", "" %></li>
+
+            <li class="header-link"><%= link_to "編集画面", "" %></li>
+
+            <li class="header-link"><%= link_to "マイページ", "" %></li>
+
+            <li class="header-link"><%= link_to "ログアウト", "" %></li>
+
+            <% else %>
+
+            <li class="header-link"><%= link_to "About", "" %></li>
+
+            <li class="header-link"><%= link_to "一般会員新規登録", "" %></li>
+
+            <li class="header-link"><%= link_to "一般会員ログイン", "" %></li>
+
+            <li class="header-link"><%= link_to "店舗会員新規登録", "" %></li>
+
+            <li class="header-link"><%= link_to "店舗会員ログイン", "" %></li>
+
+            <% end %>
+
+
+          </ul>
+       </div>
+    </nav>
+  </header>
+
     <%= yield %>
+
   </body>
 </html>

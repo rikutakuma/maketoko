@@ -1,0 +1,38 @@
+<div class="container">
+	<div class="row">
+		<h2>新規投稿</h2>
+
+		<%= form_for(send, url: url) do |f| %>
+
+		<% if send.errors.any? %>
+  			<div id="error_explanation">
+    		<h2>error: <%= send.errors.count %></h2>
+    			<ul>
+    				<% send.errors.full_messages.each do |message| %>
+      					<li><%= message %></li>
+    				<% end %>
+    			</ul>
+  			</div>
+  		<% end %>
+
+  		
+  		<div class="row">
+  		<%= f.attachment_field :send_image %>
+  		</div>
+
+  		<div class="row">
+  		<p>投稿内容</p>
+  		<%= f.text_area :send_comment %>
+  		</div>
+
+  		<div class="row">
+  			<%= f.submit "送信" %>
+  		</div>
+
+  		<% end %>
+
+  	</div>
+  </div>
+
+
+

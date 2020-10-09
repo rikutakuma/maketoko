@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_08_061636) do
+ActiveRecord::Schema.define(version: 2020_10_09_080325) do
 
   create_table "areas", force: :cascade do |t|
     t.string "area_name", null: false
@@ -69,11 +69,11 @@ ActiveRecord::Schema.define(version: 2020_10_08_061636) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer "area_id", null: false
+    t.integer "area_id"
     t.string "corporation_name", null: false
     t.string "store_name", null: false
-    t.string "store_image_id", null: false
-    t.text "store_introduction", null: false
+    t.string "store_image_id"
+    t.text "store_introduction"
     t.string "address", null: false
     t.string "postal_code", null: false
     t.string "telephone_number", null: false

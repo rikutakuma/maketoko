@@ -6,4 +6,9 @@ class User < ApplicationRecord
 
   has_many :relations, dependent: :destroy
   has_many :favorites, dependent: :destroy
+
+  validates :handle_name, presence: true
+  validates :gender, presence: true
+  validates :age, presence: true
+
 end

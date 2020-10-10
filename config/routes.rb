@@ -27,5 +27,17 @@ Rails.application.routes.draw do
   	registrations: 'users/registrations',
   }
 
+  scope module: :users do
+    get 'users/mypage' => 'users#show'
+    get 'users/information/edit' => 'users#edit', as: 'user_edit_information'
+    patch 'users/information' => 'users#update', as: 'user_update_information'
+    put 'users/information' => 'users#update'
+    get 'users/unsubscribe' => 'users#unsubscribe', as: 'user_confirm_unsubscribe'
+    patch 'users/leave' => 'users#leave', as: 'leave_user'
+    put 'users/leave' => 'users#leave'
+
+
+  end
+
 
 end

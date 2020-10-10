@@ -4,6 +4,21 @@
   <%= render "users/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.label :handle_name, "ハンドルネーム" %>
+    <%= f.text_field :handle_name, autofocus: true, autocomplete: "handle_name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "性別"%>
+    <%= f.text_field :gender, autofocus: true, autocomplete: "gender" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "年齢"%>
+    <%= f.text_field :age, autofocus: true, autocomplete:"age" %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>

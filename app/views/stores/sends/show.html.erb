@@ -1,0 +1,25 @@
+<div class="container send-show">
+	<div class="row">
+		<div class="send-show-top">
+		<%= attachment_image_tag @store, :store_image, format: "jpeg", size: "50x50", fallback: "no-image.jpeg", size:'50x50' %>
+
+		<%= @store.corporation_name %>.<%= @store.store_name %>
+		</div>
+
+		<div class="send-show-bottom">
+
+
+		<%= attachment_image_tag @send, :send_image, format: "jpeg", size: "300x250", fallback: "no-image.jpeg", size:'300x250' %>
+
+		<%= @send.send_comment %>
+
+		<div class="show-send-date"><%= @send.created_at %></div>
+		</div>
+
+		<div>
+			<%= link_to "編集する", edit_send_path(@send), class: "btn btn-primary" %>
+			
+		</div>
+
+	</div>
+</div>

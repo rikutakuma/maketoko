@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   }
 
   scope module: :stores do
-    resources :sends, only: [:index, :show, :create, :edit, :update, :destroy]
+    resources :sends
     get 'stores/mypage' => 'stores#show'
     get 'stores/information/edit' => 'stores#edit', as: 'store_edit_information'
     patch 'stores/information' => 'stores#update', as: 'store_update_information'

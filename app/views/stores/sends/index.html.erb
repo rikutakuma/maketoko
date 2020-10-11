@@ -1,0 +1,68 @@
+<div class="container store-index">
+	<div class="row">
+		<div class="col-xs-9">
+
+
+			<div class="store-index-info">
+
+				<div class="col-xs-5">
+					<h3 class="store-index-title">店舗トップページ</h3>
+						<div class="send-top-image">
+
+							<%= attachment_image_tag @store, :store_image, format: "jpeg", size: "150x150", fallback: "no-image.jpeg", size:'150x150' %>
+						</div>
+				</div>
+
+				<div class="col-xs-7">
+
+					<h4><%= @store.corporation_name %>.<%= @store.store_name %></h4>
+					<h5>お店紹介<br><%= @store.store_introduction %></h5>
+					<p>住所<br><%= @store.address %></p>
+					<p>電話番号<br><%= @store.telephone_number %></p>
+				</div>
+			</div>
+
+			<div class="col-xs-12 store_send-index">
+
+				<h3>タイムライン</h3>
+
+					<% @sends.each do |send| %>
+
+					<div class="store-sends">
+
+						<div class="store_send_top">
+
+							<%= attachment_image_tag send.store, :store_image, format: "jpeg", size: "50x50", fallback: "no-image.jpeg", size:'50x50' %>
+
+							<%= send.store.corporation_name %>.<%= send.store.store_name %>
+						</div>
+
+
+
+						<div class="store_send_bottom">
+
+							<%= attachment_image_tag send, :send_image, format: "jpeg", size: "300x250", fallback: "no-image.jpeg", size:'300x250' %>
+
+
+							<%= link_to send.send_comment, send_path(send.id) %>
+						</div>
+
+							<%= send.created_at %>
+
+
+					</div>
+
+					<% end %>
+			</div>
+
+		</div>
+
+		<div class="row">
+			<div class="col-xs-3 side-bar">
+			</div>
+		</div>
+
+
+
+	</div>
+</div>

@@ -5,4 +5,7 @@ class Send < ApplicationRecord
   belongs_to :store
 
   attachment :send_image
+  attachment :store_image
+
+  validates :send_comment, presence: true
 end

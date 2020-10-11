@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   }
 
   scope module: :stores do
-    resources :sends, only: [:index, :show, :create, :edit, :update, :destroy]
+    resources :sends
     get 'stores/mypage' => 'stores#show'
     get 'stores/information/edit' => 'stores#edit', as: 'store_edit_information'
     patch 'stores/information' => 'stores#update', as: 'store_update_information'
@@ -26,6 +26,18 @@ Rails.application.routes.draw do
   	passwords: 'users/passwords',
   	registrations: 'users/registrations',
   }
+
+  scope module: :users do
+    get 'users/mypage' => 'users#show'
+    get 'users/information/edit' => 'users#edit', as: 'user_edit_information'
+    patch 'users/information' => 'users#update', as: 'user_update_information'
+    put 'users/information' => 'users#update'
+    get 'users/unsubscribe' => 'users#unsubscribe', as: 'user_confirm_unsubscribe'
+    patch 'users/leave' => 'users#leave', as: 'leave_user'
+    put 'users/leave' => 'users#leave'
+
+
+  end
 
 
 end

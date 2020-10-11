@@ -1,0 +1,41 @@
+<div class="container">
+	<div class="row">
+		<h2>会員情報編集</h2>
+		<%= form_for(@user, url: user_update_information_path) do |f| %>
+
+		<table class="table table-hover">
+			<div class ="col-lg-6">
+
+			<tbody>
+
+				<tr>
+					<td><%= f.label :handle_name, "ハンドルネーム" %></td>
+					<td><%= f.text_field :handle_name, :placeholder =>"#{@user.handle_name}" %></td>
+				</tr>
+
+				<tr>
+					<td><%= f.label :gender, "性別" %></td>
+					<td><%= f.text_field :gender, :placeholder =>"#{@user.gender}" %></td>
+				</tr>
+
+				<tr>
+					<td><%= f.label :age, "年齢" %></td>
+					<td><%= f.text_field :age, :placeholder =>"#{@user.age}" %></td>
+				</tr>
+
+				<tr>
+					<td><%= f.label :email, "メールアドレス" %></td>
+					<td><%= f.email_field :email, autocomplete: "email", :placeholder =>"#{@user.email}" %></td>
+				</tr>
+
+				<tr>
+					<td><%= f.submit "編集内容を保存する", class: "btn btn-primary" %></td>
+					<td><%= link_to "退会する", user_confirm_unsubscribe_path, class: "btn btn-danger" %></td>
+				</tr>
+			</tbody>
+			</div>
+		</table>
+		<% end %>
+	</div>
+</div>
+

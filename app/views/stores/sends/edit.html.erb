@@ -1,15 +1,19 @@
 <div class="container send-edit">
 	<div class="row">
 
-		<%= form_for(@send, url:send_path) do |f| %>
+		<%= form_for(@send, url:stores_send_path) do |f| %>
+			<div class="send-edit-title">
 			<h2>投稿編集ページ</h2>
+			</div>
 
 				<div class="send-edit-image">
+					<h3>画像投稿</h3>
 					<%= f.attachment_field :send_image %>
 				</div>
 
 				<div class="send-edit-comment">
-					<%= f.text_area :send_comment, class: "col-xs-6" %>
+					<h3>投稿内容</h3>
+					<%= f.text_area :send_comment, :size=>"80x5" %>
 				</div>
 
 				<div class="send-edit-submit">

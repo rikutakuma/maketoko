@@ -1,54 +1,55 @@
-<div class="container">
+<div class="container store-edit">
 	<div class="row">
 		<h2>店舗情報編集</h2>
+
 		<%= form_for(@store, url: store_update_information_path) do |f| %>
 
-			<div>
-				<%= f.label :store_image, "画像" %>
-				<div class="image_field">
-				<%= attachment_image_tag @store, :store_image, format: "jpeg", size: "50x50", id: "img_prev", fallback: "no-image.jpeg", size: '50x50' %>
-				<span class="btn btn-file btn-info"><%= f.attachment_field :store_image %>画像選択</span>
-			</div>
+			<div class="store-edit-image">
+				<%= f.label :store_image, "アカウント画像" %>
+				<div class="store-edit-image2">
+				<%= attachment_image_tag @store, :store_image, format: "jpeg", size: "70x70", fallback: "no-image.jpeg", size: '70x70' %>
+				</div>
+				<%= f.attachment_field :store_image %>
 			</div>
 
 		<table class="table table-hover">
-			<div class ="col-lg-6">
+			<div class ="col-xs-6">
 
 			<tbody>
 
 				<tr>
 					<td><%= f.label :corporation_name, "会社名" %></td>
-					<td><%= f.text_field :corporation_name, :placeholder =>"#{@store.corporation_name}" %></td>
+					<td><%= f.text_field :corporation_name, :placeholder =>"#{@store.corporation_name}", :size=>"40" %></td>
 				</tr>
 
 				<tr>
 					<td><%= f.label :store_name, "店舗名" %></td>
-					<td><%= f.text_field :store_name, :placeholder =>"#{@store.store_name}" %></td>
+					<td><%= f.text_field :store_name, :placeholder =>"#{@store.store_name}", :size=>"40" %></td>
 				</tr>
 
 				<tr>
 					<td><%= f.label :postal_code, "郵便番号(ハイフンなし7桁)" %></td>
-					<td><%= f.text_field :postal_code, :placeholder =>"#{@store.postal_code}" %></td>
+					<td><%= f.text_field :postal_code, :placeholder =>"#{@store.postal_code}", :size=>"40" %></td>
 				</tr>
 
 				<tr>
 					<td><%= f.label :address, "住所" %></td>
-					<td><%= f.text_field :address, :placeholder =>"#{@store.address}" %></td>
+					<td><%= f.text_field :address, :placeholder =>"#{@store.address}", :size=>"40" %></td>
 				</tr>
 
 				<tr>
 					<td><%= f.label :telephone_number, "電話番号" %></td>
-					<td><%= f.text_field :telephone_number, :placeholder =>"#{@store.telephone_number}" %></td>
+					<td><%= f.text_field :telephone_number, :placeholder =>"#{@store.telephone_number}", :size=>"40" %></td>
 				</tr>
 
 				<tr>
 					<td><%= f.label :email, "メールアドレス" %></td>
-					<td><%= f.email_field :email, autocomplete: "email", :placeholder =>"#{@store.email}" %></td>
+					<td><%= f.email_field :email, autocomplete: "email", :placeholder =>"#{@store.email}", :size=>"40" %></td>
 				</tr>
 
 				<tr>
 					<td><%= f.label :store_introduction, "店舗紹介" %></td>
-					<td><%= f.text_area :store_introduction, :placeholder =>"#{@store.store_introduction}" %></td>
+					<td><%= f.text_area :store_introduction, :placeholder =>"#{@store.store_introduction}", :size=>"40x5" %></td>
 				</tr>
 
 				<tr>

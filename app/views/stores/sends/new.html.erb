@@ -1,8 +1,10 @@
 <div class="container send-new">
 	<div class="row">
-		<h2>新規投稿</h2>
+    <div class="send-new-title">
+		<h2>タイムライン新規投稿</h2>
+  </div>
 
-		<%= form_for(@send, url:sends_path) do |f| %>
+		<%= form_for(@send, url:stores_sends_path) do |f| %>
 
 		<% if @send.errors.any? %>
   			<div id="error_explanation">
@@ -17,12 +19,13 @@
 
   		
   		<div class="row send-new-image">
+      <h3>画像投稿</h3>
   		<%= f.attachment_field :send_image, placeholder: "画像" %>
   		</div>
 
   		<div class="row send-new-comment">
-  		<p>投稿内容</p>
-  		<%= f.text_area :send_comment, class: "col-xs-6" %>
+  		<h3>投稿内容</h3>
+  		<%= f.text_area :send_comment, :size=>"80x5" %>
   		</div>
 
   		<div class="row send-new-submit">

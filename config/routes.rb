@@ -8,8 +8,14 @@ Rails.application.routes.draw do
   	registrations: 'stores/registrations',
   }
 
-  scope module: :stores do
+  namespace :stores do
     resources :sends
+    resources :genres, only: [:index, :create, :edit, :update]
+    resources :areas, only: [:index, :create, :edit, :update]
+    resources :infomations, only: [:new, :create, :edit, :show, :update, :destroy]
+  end
+
+  scope module: :stores do
     get 'stores/mypage' => 'stores#show'
     get 'stores/information/edit' => 'stores#edit', as: 'store_edit_information'
     patch 'stores/information' => 'stores#update', as: 'store_update_information'
@@ -21,11 +27,19 @@ Rails.application.routes.draw do
 
 
 
+
   devise_for :users, controllers: {
-  	sessions: 'user/sessions',
+  	sessions: 'users/sessions',
   	passwords: 'users/passwords',
   	registrations: 'users/registrations',
   }
+
+  namespace :users do
+    resources :favorites, only: [:create, :destroy]
+    resources :follows, only: [:create, :destroy]
+    resources :stores, only: [:index, :show]
+    resources :sends, only: [:index, :show]
+  end
 
   scope module: :users do
     get 'users/mypage' => 'users#show'
@@ -36,8 +50,9 @@ Rails.application.routes.draw do
     patch 'users/leave' => 'users#leave', as: 'leave_user'
     put 'users/leave' => 'users#leave'
 
-
   end
+
+
 
 
 end

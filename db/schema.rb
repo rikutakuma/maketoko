@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_09_180301) do
+ActiveRecord::Schema.define(version: 2020_10_11_131444) do
 
   create_table "areas", force: :cascade do |t|
     t.string "area_name", null: false
@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 2020_10_09_180301) do
   end
 
   create_table "favorites", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "send_id", null: false
+    t.integer "user_id"
+    t.integer "send_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -42,15 +42,16 @@ ActiveRecord::Schema.define(version: 2020_10_09_180301) do
 
   create_table "infomations", force: :cascade do |t|
     t.integer "store_id", null: false
-    t.text "introduction", null: false
-    t.string "info_image_id", null: false
+    t.text "introduction"
+    t.string "info_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "titles"
   end
 
   create_table "relationships", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "store_id", null: false
+    t.integer "user_id"
+    t.integer "store_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -91,11 +92,11 @@ ActiveRecord::Schema.define(version: 2020_10_09_180301) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "handle_name", null: false
-    t.boolean "is_deleted", default: true, null: false
+    t.boolean "is_deleted", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "gender"
     t.string "age"
+    t.string "gender"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -1,0 +1,18 @@
+<div class="container infomation-show">
+	<div class="row">
+
+		<div class="infomation-show-box">
+
+		<%= @infomation.titles %>
+
+		<%= attachment_image_tag @infomation, :info_image, format: "jpeg", size: "300x250", fallback: "no-image.jpeg", size:'300x250' %>
+
+		<%= @infomation.introduction %>
+
+		<div>
+			<%= link_to "編集する", edit_stores_infomation_path(@infomation), class: "btn btn-primary" %>
+			
+		</div>
+
+	</div>
+</div>

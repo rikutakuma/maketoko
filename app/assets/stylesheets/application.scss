@@ -55,11 +55,90 @@ header {
 	color: black;
 }
 
+//////////sign_up sign_in
+/////sign_in_store
+.store_sign_in {
+  margin-left: 130px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.store_sign_in_box {
+  margin-top: 10px;
+}
+
+.store_sign_in_btn {
+  margin-top: 10px;
+}
+
+/////store_sign_up
+.sign_up {
+  margin-left: 130px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.sign_up_box {
+  margin-top: 10px;
+}
+
+/////user_sign_in
+.user_sign_in {
+  margin-left: 130px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.user_sign_in_box {
+  margin-top: 10px;
+}
+
+.store_sign_in_btn {
+  margin-top: 10px;
+}
+
+//////////store-mypage
+/////store-show
+.store-show {
+  margin-top: 40px;
+}
+
+.store-show-btn {
+  margin-top: 20px;
+}
+
+.store-show-image {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+/////store-edit
+.store-edit {
+  margin-top: 40px;
+}
+
+.store-edit-image {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.store-edit-image2 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/////store-unsubscribe
+.store-unsubscribe {
+  margin-top: 40px;
+}
+
+
+
 ////////// store_send
 /////send-index
 
 .store-index {
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 .send-top-image {
@@ -76,7 +155,19 @@ header {
 }
 
 .side-bar {
-  background-color: #009e9f;
+  background-color: #e8ece9;
+  padding: 20px;
+}
+
+.store-sidebar-sends {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.side-bar-image {
+  margin: o auto;
 }
 
 .store-sends {
@@ -108,6 +199,14 @@ header {
   padding: 5px;
 }
 
+.send-show-bottom {
+  margin-left: 20px;
+}
+
+.send-show-edit {
+  margin-left: 20px;
+}
+
 /////send-new
 
 .send-new {
@@ -115,21 +214,34 @@ header {
   margin-bottom: 40px;
 }
 
+.send-new-title {
+  background-color: #25b7c0;
+  padding: 5px;
+}
+
 .send-new-image {
   margin-top: 30px;
+  margin-left: 5px;
 }
 
 .send-new-comment {
   margin-top: 30px;
+  margin-left: 5px;
 }
 
 .send-new-submit {
   margin-top: 20px;
+  margin-left: 5px;
 }
 
 /////send-edit
 .send-edit {
   margin-top: 60px;
+}
+
+.send-edit-title {
+  background-color: #25b7c0;
+  padding: 5px;
 }
 
 .send-edit-image {
@@ -144,4 +256,35 @@ header {
   margin-top: 30px;
 }
 
+//////////infomation
+/////infomation-new
+.infomation-new {
+  margin-top: 40px;
+}
+
+.infomation-top {
+  background-color: #25b7c0;
+  padding: 5px;
+}
+
+
+.infomation-new-title {
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+.infomation-new-image {
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+.infomation-new-introduct {
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+.infomation-new-submit {
+  margin-left: 5px;
+  margin-top: 10px;
+}
 

@@ -13,11 +13,12 @@
 
 		<%= @send.send_comment %>
 
-		<div class="show-send-date"><%= @send.created_at %></div>
+		<div class="show-send-date">
+			<%= @send.created_at %></div>
 		</div>
 
-		<div>
-			<%= link_to "編集する", edit_send_path(@send), class: "btn btn-primary" %>
+		<div class="send-show-edit">
+			<%= link_to "編集する", edit_stores_send_path(@send), class: "btn btn-primary" %>
 			
 		</div>
 

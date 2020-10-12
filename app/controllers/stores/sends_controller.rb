@@ -10,6 +10,7 @@ class Stores::SendsController < ApplicationController
 
     @store = current_store
     @sends = @store.sends.order(created_at: :desc)
+    @infomations = @store.infomations
   end
 
   def show
@@ -22,7 +23,7 @@ class Stores::SendsController < ApplicationController
     @send.store_id = current_store.id
 
     if @send.save
-      redirect_to sends_path(@send)
+      redirect_to stores_sends_path(@send)
     else
       render "new"
     end
@@ -35,7 +36,7 @@ class Stores::SendsController < ApplicationController
   def update
     @send = Send.find(params[:id])
     if @send.update(send_params)
-      redirect_to sends_path(@send)
+      redirect_to stores_sends_path(@send)
     else
       render "edit"
     end
@@ -45,7 +46,7 @@ class Stores::SendsController < ApplicationController
     @send = Send.find_by(id: params[:id])
 
     @send.destroy
-      redirect_to sends_path(@send)
+      redirect_to stores_sends_path(@send)
   
   end
 

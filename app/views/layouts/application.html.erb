@@ -20,37 +20,41 @@
         <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
 
-            <li class="header-link"><%= link_to "About", "" %></li>
+            <li class="header-link"><%= link_to "About", about_path %></li>
 
             <li class="header-link"><%= link_to "ランキング", "" %></li>
 
             <li class="header-link"><%= link_to "店舗一覧", "" %></li>
 
-            <li class="header-link"><%= link_to "マイページ", "" %></li>
+            <li class="header-link"><%= link_to "マイページ", users_mypage_path %></li>
 
-            <li class="header-link"><%= link_to "ログアウト", "" %></li>
+            <li class="header-link"><%= link_to "ログアウト",  destroy_user_session_path, method: :delete %></li>
 
             <% elsif store_signed_in? %>
 
-            <li class="header-link"><%= link_to "About", "" %></li>
+            <li class="header-link"><%= link_to "About", about_path %></li>
 
-            <li class="header-link"><%= link_to "編集画面", "" %></li>
+            <li class="header-link"><%= link_to "トップページ", stores_sends_path %></li>
 
-            <li class="header-link"><%= link_to "マイページ", "" %></li>
+            <li class="header-link"><%= link_to "サイドバー投稿ページ", new_stores_infomation_path %></li>
 
-            <li class="header-link"><%= link_to "ログアウト", "" %></li>
+            <li class="header-link"><%= link_to "タイムライン投稿ページ", new_stores_send_path %></li>
+
+            <li class="header-link"><%= link_to "マイページ", stores_mypage_path %></li>
+
+            <li class="header-link"><%= link_to "ログアウト", destroy_store_session_path, method: :delete %></li>
 
             <% else %>
 
-            <li class="header-link"><%= link_to "About", "" %></li>
+            <li class="header-link"><%= link_to "About", about_path %></li>
 
-            <li class="header-link"><%= link_to "一般会員新規登録", "" %></li>
+            <li class="header-link"><%= link_to "一般会員新規登録", new_user_registration_path %></li>
 
-            <li class="header-link"><%= link_to "一般会員ログイン", "" %></li>
+            <li class="header-link"><%= link_to "一般会員ログイン", new_user_session_path %></li>
 
-            <li class="header-link"><%= link_to "店舗会員新規登録", "" %></li>
+            <li class="header-link"><%= link_to "店舗会員新規登録", new_store_registration_path %></li>
 
-            <li class="header-link"><%= link_to "店舗会員ログイン", "" %></li>
+            <li class="header-link"><%= link_to "店舗会員ログイン", new_store_session_path %></li>
 
             <% end %>
 

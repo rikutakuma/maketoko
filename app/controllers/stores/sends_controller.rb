@@ -55,7 +55,7 @@ class Stores::SendsController < ApplicationController
 
 
   def send_params
-    params.require(:send).permit(:send_comment, :send_image, :store_id)
+    params.require(:send).permit(:send_comment, :send_image, :store_id, :title)
   end
 
 end

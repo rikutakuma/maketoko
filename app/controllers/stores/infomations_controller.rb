@@ -6,7 +6,7 @@ class Stores::InfomationsController < ApplicationController
 
   def show
     @infomation = Infomation.find(params[:id])
-    @store = @send.store
+    @store = @infomation.store
   end
 
   def create

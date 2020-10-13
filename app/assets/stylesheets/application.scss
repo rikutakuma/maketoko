@@ -26,7 +26,7 @@ body {
 }
 
 .navbar-left {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 header {
@@ -42,17 +42,28 @@ header {
   background-color: white;
 }
 
+
 .Logo {
-  font-size: 40px;
+  font-size: 30px;
   border: 1px solid black;
   border-radius: 5px;
-  margin-top: 30px;
+  margin-left: 10px;
   background-color: white;
+  padding: 5px;
 }
 
 .Logolink {
 	text-decoration: none;
 	color: black;
+}
+
+.password-edit {
+  margin-top: 40px;
+  margin-left: 150px;
+}
+
+.password-edit-submit {
+  margin-top: 20px;
 }
 
 //////////sign_up sign_in
@@ -97,6 +108,7 @@ header {
   margin-top: 10px;
 }
 
+/////////////////////////storeside
 //////////store-mypage
 /////store-show
 .store-show {
@@ -141,22 +153,40 @@ header {
   margin-top: 40px;
 }
 
+.store-index-info {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 20px;
+}
+
 .send-top-image {
   margin-left: 40px;
+  margin: 0 auto;
+}
+
+.store-index-infomation h5 {
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.store-index-infomation p {
+  border-bottom: 1px solid black;
 }
 
 .store_send-index {
-  margin-top: 40px;
-  border-top: 1px solid black;
+  margin-top: 20px;
 }
+
 
 .store-index-title {
   margin-bottom: 20px;
 }
 
 .side-bar {
-  background-color: #e8ece9;
+  background-color: #ffe9a9;
   padding: 20px;
+  border-radius: 5px;
 }
 
 .store-sidebar-sends {
@@ -166,8 +196,20 @@ header {
   padding: 5px;
 }
 
+.store-sidebar-sends h4 {
+  background-color: #f19ca7;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 5px;
+  text-align: center;
+}
+
 .side-bar-image {
-  margin: o auto;
+  text-align: center;
+}
+
+.store-sidebar-sends p {
+  margin-top: 10px;
 }
 
 .store-sends {
@@ -180,12 +222,22 @@ header {
   margin: 20px;
   background-color: #25b7c0;
   padding: 5px;
+  border-radius: 5px;
   }
 
 .store_send_bottom {
   margin: 20px;
+  display: flex;
 }
 
+.store-send-bottom-insite h4 {
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.store-send-bottom-insite p {
+  margin-left: 10px;
+}
 
 /////send-show
 
@@ -200,6 +252,19 @@ header {
 }
 
 .send-show-bottom {
+  margin-left: 20px;
+  display: flex;
+}
+
+.send-show-bottom-right {
+  margin-left: 20px;
+}
+
+.send-show-bottom-right h4 {
+  font-weight: bold;
+}
+
+.show-send-date {
   margin-left: 20px;
 }
 
@@ -221,6 +286,11 @@ header {
 
 .send-new-image {
   margin-top: 30px;
+  margin-left: 5px;
+}
+
+.store_send-new-title {
+margin-top:10px;
   margin-left: 5px;
 }
 
@@ -287,4 +357,72 @@ header {
   margin-left: 5px;
   margin-top: 10px;
 }
+
+/////infomation-show
+.infomation-show {
+  margin-left: 5px;
+  margin-top: 40px;
+}
+
+.infomation-show-title {
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+.infomation-show-image {
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+.infomation-show-introduct {
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+.infomation-show-edit {
+  margin-left: 5px;
+  margin-top: 20px;
+}
+
+
+/////////////////////////userside
+//////////user-mypage
+/////user-show
+.user-mypage {
+  margin-top: 40px;
+}
+
+.user-mypage-link {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/////user-mypage-edit
+.user-mypage-edit{
+  margin-top: 40px;
+}
+
+/////user-mypage-unsubscribe
+.user-mypage-unsubscribe{
+  margin-top: 40px;
+}
+
+.user-mypage-unsubscribe h3 {
+  margin-bottom: 20px;
+}
+
+
+//////////user-store
+/////user-store-show
+.user-store-index {
+  margin-top: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+
+
+
+
 

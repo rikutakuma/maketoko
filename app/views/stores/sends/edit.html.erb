@@ -11,6 +11,11 @@
 					<%= f.attachment_field :send_image %>
 				</div>
 
+				<div class="store_send-edit-title">
+					<h3>投稿タイトル</h3>
+					<%= f.text_field :title, :size=>"80" %>
+				</div>
+
 				<div class="send-edit-comment">
 					<h3>投稿内容</h3>
 					<%= f.text_area :send_comment, :size=>"80x5" %>

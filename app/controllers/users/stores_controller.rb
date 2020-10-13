@@ -1,9 +1,13 @@
 class Users::StoresController < ApplicationController
 
   def index
+  	@stores = Store.all
   end
 
   def show
+  	@store = Store.find(params[:id])
+  	@sends = @store.sends.order(created_at: :desc)
+    @infomations = @store.infomations
   end
 
   def favo_ranking
@@ -11,4 +15,7 @@ class Users::StoresController < ApplicationController
 
   def follow_ranking
   end
+
+ 
 end
+

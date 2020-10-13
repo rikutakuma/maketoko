@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  root "users/sends#top"
   get "about" => "users/sends#about"
 
   devise_for :stores, controllers: {

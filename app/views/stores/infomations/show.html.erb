@@ -2,16 +2,26 @@
 	<div class="row">
 
 		<div class="infomation-show-box">
+			<h2>サイドバー投稿編集画面</h2>
 
-		<%= @infomation.titles %>
+			<div class="infomation-show-title">
+				<h3>投稿タイトル</h3>
+				<%= @infomation.titles %>
+			</div>
 
-		<%= attachment_image_tag @infomation, :info_image, format: "jpeg", size: "300x250", fallback: "no-image.jpeg", size:'300x250' %>
+			<div class="infomation-show-image">
+				<h3>投稿画像</h3>
+				<%= attachment_image_tag @infomation, :info_image, format: "jpeg", size: "300x250", fallback: "no-image.jpeg", size:'300x250' %>
+			</div>
 
-		<%= @infomation.introduction %>
+			<div class="infomation-show-introduction">
+				<h3>投稿内容</h3>
+				<%= @infomation.introduction %>
+			</div>
 
-		<div>
-			<%= link_to "編集する", edit_stores_infomation_path(@infomation), class: "btn btn-primary" %>
-			
+			<div class="infomation-show-edit">
+				<%= link_to "編集する", edit_stores_infomation_path(@infomation), class: "btn btn-primary" %>
+			</div>
 		</div>
 
 	</div>

@@ -1,8 +1,10 @@
-<div class="container">
+<div class="container user-mypage">
 	<div class="row">
 		<h1>会員詳細ページ</h1>
-		<%= link_to "編集する", user_edit_information_path, class: "btn btn-success ml2" %>
-		<%= link_to "パスワードを変更する", edit_user_registration_path, class: "btn btn-success ml2" %>
+		<div class="user-mypage-link">
+		<%= link_to "編集する", user_edit_information_path, class: "btn btn-success" %>
+		<%= link_to "パスワードを変更する", edit_user_registration_path, class: "btn btn-primary" %>
+	</div>
 
 		<table class="table table-hover">
 			<div class ="col-lg-6">

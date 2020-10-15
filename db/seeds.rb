@@ -17,7 +17,7 @@ store_introduction: "JR大阪駅南口を出てすぐ。食料品から衣料品
 address: "大阪市北区22-22-22", 
 postal_code: "5301104", 
 telephone_number: "0611041104", 
-area_id: ""
+area_id: "1"
 },
 
 {
@@ -30,7 +30,7 @@ store_introduction: "大阪御堂筋線新大阪駅北改札を南出口より�
 address: "大阪市淀川区12-34-56", 
 postal_code: "5320606", 
 telephone_number: "0641414141", 
-area_id: ""
+area_id: "1"
 },
 
 {
@@ -73,3 +73,60 @@ age: "32"
 }
 
 ])
+
+Area.create([
+{area_name:"大阪市", is_active:true},
+{area_name:"豊中市", is_active:true},
+{area_name:"池田市", is_active:true},
+{area_name:"箕面市", is_active:true},
+{area_name:"能勢町", is_active:true},
+{area_name:"豊能町", is_active:true},
+{area_name:"高槻市", is_active:true},
+{area_name:"吹田市", is_active:true},
+{area_name:"茨木市", is_active:true},
+{area_name:"摂津市", is_active:true},
+{area_name:"島本町", is_active:true},
+{area_name:"堺市", is_active:true},
+{area_name:"泉大津市", is_active:true},
+{area_name:"和泉市", is_active:true},
+{area_name:"高石市", is_active:true},
+{area_name:"忠岡町", is_active:true},
+{area_name:"岸和田市", is_active:true},
+{area_name:"貝塚市", is_active:true},
+{area_name:"泉佐野市", is_active:true},
+{area_name:"泉南市", is_active:true},
+{area_name:"阪南市", is_active:true},
+{area_name:"熊取町", is_active:true},
+{area_name:"田尻町", is_active:true},
+{area_name:"岬町", is_active:true},
+{area_name:"枚方市", is_active:true},
+{area_name:"寝屋川市", is_active:true},
+{area_name:"守口市", is_active:true},
+{area_name:"大東市", is_active:true},
+{area_name:"門真市", is_active:true},
+{area_name:"四條畷市", is_active:true},
+{area_name:"交野市", is_active:true},
+{area_name:"東大阪市", is_active:true},
+{area_name:"八尾市", is_active:true},
+{area_name:"柏原市", is_active:true},
+{area_name:"富田林市", is_active:true},
+{area_name:"河内長野市", is_active:true},
+{area_name:"松原市", is_active:true},
+{area_name:"羽曳野市", is_active:true},
+{area_name:"藤井寺市", is_active:true},
+{area_name:"大阪狭山市", is_active:true},
+{area_name:"太子町", is_active:true},
+{area_name:"河南町", is_active:true},
+{area_name:"千早赤阪村", is_active:true},
+])
+
+
+
+
+
+
+
+
+
+
+

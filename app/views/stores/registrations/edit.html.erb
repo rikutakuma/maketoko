@@ -1,3 +1,4 @@
+<div class="password-edit">
 <h2>パスワード変更</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -31,13 +32,14 @@
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "更新" %>
+  <div class="actions password-edit-submit">
+    <%= f.submit "更新", class: "btn btn-primary" %>
     
   </div>
 <% end %>
 
 
 
-<p> <%= button_to "トップページに戻る", registration_path(resource_name), data: { confirm: "本当によろしいですか?" }, method: :delete %></p>
+<p> <%= button_to "トップページに戻る", registration_path(resource_name), data: { confirm: "本当によろしいですか?" }, method: :delete, class: "btn btn-success" %></p>
 
+</div>

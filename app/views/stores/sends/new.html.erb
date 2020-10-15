@@ -23,6 +23,11 @@
   		<%= f.attachment_field :send_image, placeholder: "画像" %>
   		</div>
 
+      <div class="row store_send-new-title">
+      <h3>投稿タイトル</h3>
+      <%= f.text_field :title, :size=>"80" %>
+      </div>
+
   		<div class="row send-new-comment">
   		<h3>投稿内容</h3>
   		<%= f.text_area :send_comment, :size=>"80x5" %>

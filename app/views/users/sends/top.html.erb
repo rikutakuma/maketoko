@@ -1,0 +1,30 @@
+					<% @sends.each do |send| %>
+
+					<div class="store-sends">
+
+						<div class="store_send_top">
+
+							<%= attachment_image_tag send.store, :store_image, format: "jpeg", size: "50x50", fallback: "no-image.jpeg", size:'50x50' %>
+
+							<%= send.store.corporation_name %>　<%= send.store.store_name %>
+						</div>
+
+
+
+						<div class="store_send_bottom">
+
+							<%= attachment_image_tag send, :send_image, format: "jpeg", size: "300x250", fallback: "no-image.jpeg", size:'300x250' %>
+
+							<div class="store-send-bottom-insite">
+								<h4><%= send.title %></h4>
+
+							<p><%= send.send_comment %></p>
+							</div>
+						</div>
+
+							<%= send.created_at %>
+
+
+					</div>
+
+					<% end %>

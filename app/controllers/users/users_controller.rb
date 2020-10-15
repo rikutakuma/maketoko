@@ -22,12 +22,14 @@ class Users::UsersController < ApplicationController
     redirect_to about_path
   end
 
-  def confirm
+  def unsubscribe
   end
 
-  def follows
+  def relationships
+    @user = User.find(params[:id])
+    @relationship_stores = @user.relationship_stores
   end
-  
+
   private
 
   def set_current_user

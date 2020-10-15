@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  root "users/sends#top"
   get "about" => "users/sends#about"
 
   devise_for :stores, controllers: {
@@ -35,10 +36,16 @@ Rails.application.routes.draw do
   }
 
   namespace :users do
-    resources :favorites, only: [:create, :destroy]
     resources :follows, only: [:create, :destroy]
-    resources :stores, only: [:index, :show]
-    resources :sends, only: [:index, :show]
+    resources :stores, only: [:index, :show] do
+         resources :relationships, only: [:create, :destroy]
+       end
+    get "users/:id/relationships" => "users#relationships"
+    get "users/relationship_ranking" => "stores#relationship_ranking"
+    resources :sends, only: [:index, :show] do
+      resources :favorites, only: [:create, :destroy]
+    end
+
   end
 
   scope module: :users do

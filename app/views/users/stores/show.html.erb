@@ -18,8 +18,23 @@
 					<h5><%= @store.store_introduction %></h5>
 					<p>住所<br><%= @store.address %></p>
 					<p>電話番号<br><%= @store.telephone_number %></p>
-				</div>
+
+  				<div><p>店舗をブックマークする : 
+  					<% if @store.relationshiped_by?(current_user) %>
+
+  						<%= link_to users_store_relationship_path(@store), method: :delete do %>
+    					<i class="fa fa-heart" aria-hidden="true" ></i>
+               			 <%= @store.relationships.count %>
+  						<% end %>
+						<% else %>
+  						<%= link_to users_store_relationships_path(@store), method: :post do %>
+   						 <i class="fa fa-heart-o" aria-hidden="true"></i>
+               			<%= @store.relationships.count %>
+  						<% end %>
+					<% end %></p></div>
+			
 			</div>
+		</div>
 
 			<div class="col-xs-12 store_send-index">
 
@@ -46,6 +61,7 @@
 							<p><%= send.send_comment %></p>
 							</div>
 						</div>
+
 
 							<%= send.created_at %>
 

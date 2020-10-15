@@ -1,9 +1,9 @@
 <div class="container store-index">
 	<div class="row">
 		<div class="col-xs-8">
-			<h3>店舗一覧</h3>
-				<% @stores.each do |store| %>
-					<div class="col-xs-12 user-store-index">
+
+<% @all_ranks.each do |store| %>
+	<div class="col-xs-12 user-store-index">
 						<div class="col-xs-4 user-store-index-image">
 							<%= attachment_image_tag store, :store_image, format: "jpeg", size: "150x150", fallback: "no-image.jpeg", size:'150x150' %>
 						</div>
@@ -33,7 +33,6 @@
 
 		<div class="row">
 			<div class="col-xs-4">
-				<%= render '/users/stores/area', areas: @areas %>
 			</div>
 		</div>
 	</div>

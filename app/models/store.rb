@@ -4,8 +4,11 @@ class Store < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+
   has_many :infomations, dependent: :destroy
   has_many :sends, dependent: :destroy
+  has_many :relationships, dependent: :destroy
+
 
   attachment :store_image
 
@@ -15,5 +18,13 @@ class Store < ApplicationRecord
   validates :postal_code, presence: true, format: { with: /\A\d{7}\z/ }
   validates :address, presence: true
   validates :telephone_number, presence: true, format: { with: /\A\d{10,11}\z/ }
+
+  def relationshiped_by?(user)
+    relationships.where(user_id: user.id).exists?
+  end
+
+  
+
+
 
 end

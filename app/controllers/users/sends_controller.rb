@@ -9,8 +9,12 @@ class Users::SendsController < ApplicationController
 	end
 
 	def index
+		@user = current_user
+		@relationships = Relationship.all
+		
 	end
 
 	def show
+
 	end
 end

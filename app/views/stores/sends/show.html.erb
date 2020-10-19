@@ -6,7 +6,7 @@
 		</div>
 
 		<div class="send-show-bottom">
-			<%= attachment_image_tag @send, :send_image, format: "jpeg", size: "300x250", fallback: "no-image.jpeg", size:'300x250' %>
+			<%= attachment_image_tag @send, :send_image, format: "jpeg", size: "300x250", fallback: "not-image.jpeg", size:'300x250' %>
 
 			<div class="send-show-bottom-right">
 				<h4><%= @send.title %></h4>
@@ -15,11 +15,12 @@
 		</div>
 
 			<div class="show-send-date">
-				<%= @send.created_at %>
+				<%= l @send.created_at %>
 			</div>
 
 			<div class="send-show-edit">
 				<%= link_to "編集する", edit_stores_send_path(@send), class: "btn btn-primary" %>
+				<%= link_to "削除する", stores_path(@send), method: :delete, class: "btn btn-danger" %>
 			</div>
 
 	</div>

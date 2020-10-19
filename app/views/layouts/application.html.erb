@@ -16,15 +16,19 @@
       <div class="container">
       <nav class="nav navbar-nav navbar-left">
         <img class="logo-image" src="/assets/logo.jpg" widyh="70" height="70">
-        <span class="Logo"><%= link_to "MAKETOKO", class: "Logolink" %></span>
+        <span class="Logo"><%= link_to "MAKETOKO", root_path, class: "Logolink" %></span>
       </nav>
+
+      <nav>
 
         <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
 
-            <li class="header-link"><%= link_to "About", about_path %></li>
+            <li class="header-link"><%= link_to "会員トップページ", users_store_timeline_path(current_user) %></li>
 
-            <li class="header-link"><%= link_to "ランキング", "" %></li>
+            <li class="header-link"><%= link_to "ランキング", users_store_ranking_path %></li>
+
+            <li class="header-link"><%= link_to "お気に入り店舗", users_store_follow_path(current_user) %></li>
 
             <li class="header-link"><%= link_to "店舗一覧", users_stores_path %></li>
 
@@ -34,9 +38,7 @@
 
             <% elsif store_signed_in? %>
 
-            <li class="header-link"><%= link_to "About", about_path %></li>
-
-            <li class="header-link"><%= link_to "トップページ", stores_sends_path %></li>
+            <li class="header-link"><%= link_to "店舗トップページ", stores_sends_path %></li>
 
             <li class="header-link"><%= link_to "サイドバー投稿ページ", new_stores_infomation_path %></li>
 
@@ -62,6 +64,7 @@
 
 
           </ul>
+        </nav>
        </div>
     </nav>
   </header>

@@ -1,4 +1,5 @@
 class Users::StoresController < ApplicationController
+  before_action :authenticate_user!
 
   def index
 
@@ -7,8 +8,10 @@ class Users::StoresController < ApplicationController
     if params[:area_id]
       @area = Area.find(params[:area_id])
       @stores = @area.store
+      @stores_count = @area.store.count
     else
       @stores = Store.all
+      @stores_count = Store.count
     end
   end
 
@@ -25,5 +28,14 @@ class Users::StoresController < ApplicationController
     @all_ranks = Store.find(Relationship.group(:store_id).order('count(store_id) desc').limit(10).pluck(:store_id))
   end
 
+def area_ranking
+  @areas = Area.where(is_active: true)
+  if params[:area_id]
+    @area = Area.find(params[:area_id])
+  end
+
+    @all_ranks = Store.find(Relationship.group(:store_id).order('count(store_id) desc').limit(10).pluck(:store_id))
+    @area_ranks = @all_ranks.select{ |store| store.area_id == @area.id }
+  end
 
 end

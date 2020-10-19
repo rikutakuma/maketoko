@@ -1,4 +1,6 @@
 class Stores::InfomationsController < ApplicationController
+  before_action :authenticate_store!
+  before_action :ensure_correct_store, only: [:edit, :update, :destroy]
 
   def new
     @infomation = Infomation.new
@@ -35,7 +37,6 @@ class Stores::InfomationsController < ApplicationController
 
   def destroy
     @infomation = Infomation.find_by(id: params[:id])
-
     @infomation.destroy
       redirect_to stores_sends_path(@send)
   end
@@ -44,5 +45,12 @@ class Stores::InfomationsController < ApplicationController
 
   def infomation_params
     params.require(:infomation).permit(:introduction, :info_image, :store_id, :titles)
+  end
+
+  def ensure_correct_store
+    @infomation = Infomation.find(params[:id])
+    if current_store != @infomation.store
+      redirect_to stores_sends_path
+    end
   end
 end

@@ -2,7 +2,6 @@ class Users::FavoritesController < ApplicationController
   before_action :authenticate_user!
 
   def create
-  	
   	@send = Send.find(params[:send_id])
     @favorite = current_user.favorites.new(send_id: @send.id)
     @favorite.save

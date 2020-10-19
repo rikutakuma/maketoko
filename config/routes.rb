@@ -10,10 +10,11 @@ Rails.application.routes.draw do
   }
 
   namespace :stores do
-    resources :sends
+    resources :sends, except: [:destroy]
     resources :genres, only: [:index, :create, :edit, :update]
     resources :areas, only: [:index, :create, :edit, :update]
     resources :infomations, only: [:new, :create, :edit, :show, :update, :destroy]
+    delete "sends/:id/delete" => "sends#delete"
   end
 
   scope module: :stores do
@@ -36,15 +37,15 @@ Rails.application.routes.draw do
   }
 
   namespace :users do
-    resources :follows, only: [:create, :destroy]
     resources :stores, only: [:index, :show] do
          resources :relationships, only: [:create, :destroy]
        end
-    get "users/:id/relationships" => "users#relationships"
-    get "users/relationship_ranking" => "stores#relationship_ranking"
-    resources :sends, only: [:index, :show] do
-      resources :favorites, only: [:create, :destroy]
-    end
+    get "users/:id/relationships" => "users#relationships", as: "store_follow"
+    get "users/:id/timeline" => "users#timeline", as: "store_timeline"
+    get "users/relationship_ranking" => "stores#relationship_ranking", as: "store_ranking"
+    get "users/:area_id/area_ranking" => "stores#area_ranking", as: "area_ranking"
+    resources :sends, only: [:index, :show]
+    resources :users, only: [:index]
 
   end
 

@@ -53,8 +53,8 @@ header {
 }
 
 .Logolink {
-	text-decoration: none;
-	color: black;
+  text-decoration: none;
+  color: black;
 }
 
 .password-edit {
@@ -64,6 +64,13 @@ header {
 
 .password-edit-submit {
   margin-top: 20px;
+}
+
+.random-store {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 5px;
 }
 
 //////////sign_up sign_in
@@ -143,8 +150,6 @@ header {
 .store-unsubscribe {
   margin-top: 40px;
 }
-
-
 
 ////////// store_send
 /////send-index
@@ -237,6 +242,15 @@ header {
 
 .store-send-bottom-insite p {
   margin-left: 10px;
+}
+
+.store_send_edit {
+  margin-left: 10px;
+}
+
+.store_send_create {
+  text-align: right;
+  margin-right: 10px;
 }
 
 /////send-show
@@ -360,7 +374,6 @@ margin-top:10px;
 
 /////infomation-show
 .infomation-show {
-  margin-left: 5px;
   margin-top: 40px;
 }
 
@@ -384,6 +397,24 @@ margin-top:10px;
   margin-top: 20px;
 }
 
+/////infomation-edit
+.infomation-edit {
+  margin-top: 40px;
+}
+
+.infomation-edit-image {
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+.infomation-edit-introduct {
+  margin-left: 5px;
+  margin-top: 10px;
+}
+.infomation-edit-submit {
+  margin-left: 5px;
+  margin-top: 10px;
+}
 
 /////////////////////////userside
 //////////user-mypage
@@ -421,8 +452,15 @@ margin-top:10px;
   padding: 20px;
 }
 
+/////timeline
 
+.timeline-follow-box {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 5px;
+}
 
-
-
-
+.timeline-follow-box p {
+  float: right;
+}

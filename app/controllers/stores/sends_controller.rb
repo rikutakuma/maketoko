@@ -1,6 +1,6 @@
 class Stores::SendsController < ApplicationController
   before_action :authenticate_store!
-  
+  before_action :ensure_correct_store, only:[:edit, :update, :destroy]
 
   def new
     @send = Send.new
@@ -42,20 +42,24 @@ class Stores::SendsController < ApplicationController
     end
   end
 
-  def destroy
+  def delete
     @send = Send.find_by(id: params[:id])
-
-    @send.destroy
+    @send.delete
       redirect_to stores_sends_path(@send)
-  
   end
 
   private
 
-
-
   def send_params
     params.require(:send).permit(:send_comment, :send_image, :store_id, :title)
   end
+
+  def ensure_correct_store
+    @send = Send.find(params[:id])
+    if current_store != @send.store
+      redirect_to stores_sends_path
+    end
+  end
+
 
 end

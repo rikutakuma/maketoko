@@ -25,9 +25,16 @@ class Users::UsersController < ApplicationController
   def unsubscribe
   end
 
+  def timeline
+    @user = User.find(params[:id])
+    @relationship_stores = @user.relationship_stores
+    @sends = Send.where(store_id: @relationship_stores).order(created_at: :desc)
+  end
+
   def relationships
     @user = User.find(params[:id])
     @relationship_stores = @user.relationship_stores
+    @random = Store.order("RANDOM()").limit(5)
   end
 
   private
@@ -39,4 +46,5 @@ class Users::UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:handle_name, :email, :gender, :age)
   end
+
 end

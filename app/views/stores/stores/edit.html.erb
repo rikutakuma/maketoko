@@ -7,7 +7,7 @@
 			<div class="store-edit-image">
 				<%= f.label :store_image, "アカウント画像" %>
 				<div class="store-edit-image2">
-				<%= attachment_image_tag @store, :store_image, format: "jpeg", size: "70x70", fallback: "no-image.jpeg", size: '70x70' %>
+				<%= attachment_image_tag @store, :store_image, format: "jpeg", size: "70x70", fallback: asset_("no-image.jpeg"), size: '70x70' %>
 				</div>
 				<%= f.attachment_field :store_image %>
 			</div>

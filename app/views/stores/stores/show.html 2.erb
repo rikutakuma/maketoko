@@ -1,0 +1,27 @@
+<div class="container store-show">
+	<div class="row">
+		<h1>店舗詳細ページ</h1>
+		<div class="store-show-btn">
+		<%= link_to "編集する", store_edit_information_path, class: "btn btn-success" %>
+		<%= link_to "パスワードを変更する", edit_store_registration_path, class: "btn btn-success" %>
+	</div>
+
+		<div class="store-show-image">
+			<p>アカウント画像</p><%= attachment_image_tag @store, :store_image, format: "jpeg", size: "70x70", fallback: asset_path("no-image.jpeg"), size:'70x70' %>
+		</div>
+
+		<table class="table table-hover">
+			<div class ="col-lg-6">
+
+			<tbody>
+				<tr><th>会社名</th><td><%= @store.corporation_name %></td></tr>
+				<tr><th>店舗名</th><td><%= @store.store_name %></td></tr>
+				<tr><th>郵便番号</th><td><%= @store.postal_code %></td></tr>
+				<tr><th>住所</th><td><%= @store.address %></td></tr>
+				<tr><th>電話番号</th><td><%= @store.telephone_number %></td></tr>
+				<tr><th>メールアドレス</th><td><%= @store.email%></td></tr>
+				<tr><th>店舗紹介</th><td><%= @store.store_introduction %></td></tr>
+			</tbody>
+		</table>
+	</div>
+</div>

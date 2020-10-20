@@ -1,0 +1,27 @@
+<div class="container send-show">
+	<div class="row">
+		<div class="send-show-top">
+			<%= attachment_image_tag @store, :store_image, format: "jpeg", size: "50x50", fallback: asset_path("no-image.jpeg"), size:'50x50' %>
+			<%= @store.corporation_name %>　<%= @store.store_name %>
+		</div>
+
+		<div class="send-show-bottom">
+			<%= attachment_image_tag @send, :send_image, format: "jpeg", size: "300x250", fallback: asset_path("not-image.jpeg"), size:'300x250' %>
+
+			<div class="send-show-bottom-right">
+				<h4><%= @send.title %></h4>
+				<p><%= @send.send_comment %></p>
+			</div>
+		</div>
+
+			<div class="show-send-date">
+				<%= l @send.created_at %>
+			</div>
+
+			<div class="send-show-edit">
+				<%= link_to "編集する", edit_stores_send_path(@send), class: "btn btn-primary" %>
+				<%= link_to "削除する", stores_path(@send), method: :delete, class: "btn btn-danger" %>
+			</div>
+
+	</div>
+</div>

@@ -1,0 +1,47 @@
+<div class="container user_sign_in">
+<h2>一般会員新規登録</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "users/shared/error_messages", resource: resource %>
+
+  <div class="field, user_sign_in_box">
+    <%= f.label :handle_name, "ハンドルネーム" %><br />
+    <%= f.text_field :handle_name, autofocus: true, autocomplete: "handle_name", :placeholder =>"マケトコ", class: "col-xs-3" %><br />
+  </div>
+
+  <div class="field, user_sign_in_box">
+    <%= f.label "性別"%><br />
+    <%= f.text_field :gender, autofocus: true, autocomplete: "性別", :placeholder =>"男or女", class: "col-xs-3" %><br />
+  </div>
+
+  <div class="field, user_sign_in_box">
+    <%= f.label "年齢"%><br />
+    <%= f.text_field :age, autofocus: true, autocomplete:"年齢", class: "col-xs-3" %><br />
+  </div>
+
+  <div class="field, user_sign_in_box">
+    <%= f.label "メールアドレス" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-xs-3" %><br />
+  </div>
+
+  <div class="field, user_sign_in_box">
+    <%= f.label "パスワード" %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password", class: "col-xs-3" %><br />
+  </div>
+
+  <div class="field, user_sign_in_box">
+    <%= f.label "パスワード(確認用)" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "col-xs-3" %><br />
+  </div>
+
+  <div class="actions, store_sign_in_btn">
+    <%= f.submit "新規登録", class: "btn btn-success" %>
+  </div>
+<% end %>
+
+<h4>既に登録済みの方</h4>
+  <p>こちらから　<%= link_to "ログイン", new_user_session_path, class: "btn btn-primary" %></p>
+</div>

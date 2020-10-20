@@ -1,0 +1,2 @@
+module Stores::GenresHelper
+end

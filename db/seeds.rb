@@ -304,8 +304,6 @@ titles: "毎週水曜日は5％割引デー！",
 introduction: "ぜひ、ご利用ください。",
 info_image_id: ""
 }
-
-
 ])
 
 Relationship.create([
@@ -433,13 +431,4 @@ store_id: "9"
 user_id: "4",
 store_id: "10"
 }
-
 ])
-
-
-
-
-
-
-
-

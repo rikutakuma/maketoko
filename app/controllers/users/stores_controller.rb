@@ -17,8 +17,8 @@ class Users::StoresController < ApplicationController
 
   def show
     @user = current_user
-  	@store = Store.find(params[:id])
-  	@sends = @store.sends.order(created_at: :desc)
+    @store = Store.find(params[:id])
+    @sends = @store.sends.order(created_at: :desc)
     @infomations = @store.infomations
     
   end

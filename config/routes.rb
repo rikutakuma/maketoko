@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   get "about" => "users/sends#about"
 
   devise_for :stores, controllers: {
-  	sessions: 'stores/sessions',
-  	passwords: 'stores/passwords',
-  	registrations: 'stores/registrations',
+    sessions: 'stores/sessions',
+    passwords: 'stores/passwords',
+    registrations: 'stores/registrations',
   }
 
   namespace :stores do
@@ -31,9 +31,9 @@ Rails.application.routes.draw do
 
 
   devise_for :users, controllers: {
-  	sessions: 'users/sessions',
-  	passwords: 'users/passwords',
-  	registrations: 'users/registrations',
+    sessions: 'users/sessions',
+    passwords: 'users/passwords',
+    registrations: 'users/registrations',
   }
 
   namespace :users do

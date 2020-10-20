@@ -9,7 +9,7 @@
 				<% @stores.each do |store| %>
 					<div class="col-xs-12 user-store-index">
 						<div class="col-xs-4 user-store-index-image">
-							<%= attachment_image_tag store, :store_image, format: "jpeg", size: "150x150", fallback: "no-image.jpeg", size:'150x150' %>
+							<%= attachment_image_tag store, :store_image, format: "jpeg", size: "150x150", fallback: asset_path("no-image.jpeg"), size:'150x150' %>
 						</div>
 						<div class="col-xs-8 user-store-index-text">
 							<p>会社名: 　<%= store.corporation_name %></p>

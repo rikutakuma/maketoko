@@ -53,5 +53,4 @@ class Stores::InfomationsController < ApplicationController
       redirect_to stores_sends_path
     end
   end
-
 end

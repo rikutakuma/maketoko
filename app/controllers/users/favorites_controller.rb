@@ -2,11 +2,7 @@ class Users::FavoritesController < ApplicationController
   before_action :authenticate_user!
 
   def create
-<<<<<<< HEAD
     @send = Send.find(params[:send_id])
-=======
-  	@send = Send.find(params[:send_id])
->>>>>>> develop
     @favorite = current_user.favorites.new(send_id: @send.id)
     @favorite.save
     redirect_to request.referer

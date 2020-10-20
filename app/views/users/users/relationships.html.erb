@@ -34,11 +34,9 @@
 				<% @random.each do |store| %>
 
 					<div class="col-xs-12 random-store">
-<<<<<<< HEAD
+
 						<%= attachment_image_tag store, :store_image, format: "jpeg", size: "50x50", fallback: asset_path("no-image.jpeg"), size:'50x50' %>
-=======
-						<%= attachment_image_tag store, :store_image, format: "jpeg", size: "50x50", fallback: "no-image.jpeg", size:'50x50' %>
->>>>>>> develop
+
 						<%= store.corporation_name %>　<%= store.store_name %>
 						<p><%= store.address %></p>
 						<p><%= store.store_introduction %></p>

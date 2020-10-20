@@ -6,12 +6,20 @@
 				<% @sends.each do |send| %>
 					<div class="store-sends">
 						<div class="store_send_top">
+<<<<<<< HEAD
 							<%= attachment_image_tag send.store, :store_image, format: "jpeg", size: "50x50", fallback: asset_path("no-image.jpeg"), size:'50x50' %>
+=======
+							<%= attachment_image_tag send.store, :store_image, format: "jpeg", size: "50x50", fallback: "no-image.jpeg", size:'50x50' %>
+>>>>>>> develop
 							<%= send.store.corporation_name %>　<%= send.store.store_name %>
 						</div>
 
 						<div class="store_send_bottom">
+<<<<<<< HEAD
 							<%= attachment_image_tag send, :send_image, format: "jpeg", size: "300x250", fallback: asset_path("not-image.jpeg"), size:'300x250' %>
+=======
+							<%= attachment_image_tag send, :send_image, format: "jpeg", size: "300x250", fallback: "not-image.jpeg", size:'300x250' %>
+>>>>>>> develop
 							<div class="store-send-bottom-insite">
 								<h4><%= send.title %></h4>
 								<p><%= send.send_comment %></p>
@@ -31,7 +39,11 @@
 			<div class="timeline-follow">
 				<% @relationship_stores.each do |r_store| %>
 					<div class="timeline-follow-box">
+<<<<<<< HEAD
 					<%= attachment_image_tag r_store, :store_image, format: "jpeg", size: "50x50", fallback: asset_path("no-image.jpeg"), size:'50x50' %>
+=======
+					<%= attachment_image_tag r_store, :store_image, format: "jpeg", size: "50x50", fallback: "no-image.jpeg", size:'50x50' %>
+>>>>>>> develop
 					<%= r_store.corporation_name %>　<%= r_store.store_name %>
 					<p><%= link_to "店舗詳細", users_store_path(r_store), class: "btn btn-primary" %></p>
 				</div>

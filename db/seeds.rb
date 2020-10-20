@@ -304,8 +304,46 @@ titles: "毎週水曜日は5％割引デー！",
 introduction: "ぜひ、ご利用ください。",
 info_image_id: ""
 }
+<<<<<<< HEAD
 
 
+])
+
+Relationship.create([
+{
+user_id: "1",
+store_id: "1"
+},
+
+{
+user_id: "2",
+store_id: "1"
+},
+
+{
+user_id: "3",
+store_id: "1"
+},
+
+{
+user_id: "4",
+store_id: "1"
+},
+
+{
+user_id: "5",
+store_id: "1"
+},
+=======
+>>>>>>> develop
+
+{
+user_id: "6",
+store_id: "1"
+},
+
+<<<<<<< HEAD
+=======
 ])
 
 Relationship.create([
@@ -339,10 +377,106 @@ user_id: "6",
 store_id: "1"
 },
 
+>>>>>>> develop
 {
 user_id: "7",
 store_id: "1"
 },
+<<<<<<< HEAD
+=======
+
+{
+user_id: "1",
+store_id: "2"
+},
+
+{
+user_id: "2",
+store_id: "2"
+},
+
+{
+user_id: "3",
+store_id: "2"
+},
+
+{
+user_id: "4",
+store_id: "2"
+},
+
+{
+user_id: "5",
+store_id: "2"
+},
+
+{
+user_id: "1",
+store_id: "3"
+},
+
+{
+user_id: "2",
+store_id: "3"
+},
+
+{
+user_id: "3",
+store_id: "3"
+},
+
+{
+user_id: "3",
+store_id: "4"
+},
+
+{
+user_id: "5",
+store_id: "4"
+},
+
+{
+user_id: "8",
+store_id: "5"
+},
+
+{
+user_id: "9",
+store_id: "6"
+},
+
+{
+user_id: "10",
+store_id: "7"
+},
+
+{
+user_id: "6",
+store_id: "8"
+},
+
+{
+user_id: "2",
+store_id: "8"
+},
+
+{
+user_id: "7",
+store_id: "8"
+},
+
+{
+user_id: "8",
+store_id: "9"
+},
+
+{
+user_id: "4",
+store_id: "10"
+}
+
+])
+>>>>>>> develop
 
 {
 user_id: "1",

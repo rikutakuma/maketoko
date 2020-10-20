@@ -9,7 +9,11 @@
 
 			<div class="infomation-show-image">
 				<h3>投稿画像</h3>
+<<<<<<< HEAD
 				<%= attachment_image_tag @infomation, :info_image, format: "jpeg", size: "300x250", fallback: asset_path("not-image.jpeg"), size:'300x250' %>
+=======
+				<%= attachment_image_tag @infomation, :info_image, format: "jpeg", size: "300x250", fallback: "not-image.jpeg", size:'300x250' %>
+>>>>>>> develop
 			</div>
 
 			<div class="infomation-show-introduction">

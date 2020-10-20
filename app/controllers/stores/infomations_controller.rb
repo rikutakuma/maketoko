@@ -1,4 +1,6 @@
 class Stores::InfomationsController < ApplicationController
+  before_action :authenticate_store!
+  before_action :ensure_correct_store, only: [:edit, :update, :destroy]
 
   before_action :authenticate_store!
   before_action :ensure_correct_store, only: [:edit, :update, :destroy]
@@ -54,4 +56,8 @@ class Stores::InfomationsController < ApplicationController
       redirect_to stores_sends_path
     end
   end
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> develop

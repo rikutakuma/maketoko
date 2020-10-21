@@ -8,6 +8,7 @@
 
 				<div class="send-edit-image">
 					<h3>画像投稿</h3>
+					<%= attachment_image_tag @send, :send_image, fallback: asset_path("not-image.jpeg"), id: "img_prev",style: "height: 200px; width:200px;" %>
 					<%= f.attachment_field :send_image %>
 				</div>
 
@@ -25,6 +26,18 @@
 					<%= f.submit "変更を保存", class: "btn btn-primary" %>
 				</div>
 		<% end %>
+
+		<script>
+          $(function(){
+            $('#send_send_image').on('change', function (e) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+              $(".send_image").attr('src', e.target.result);
+            }
+            reader.readAsDataURL(e.target.files[0]);
+          });
+          });
+        </script>
 
 	</div>
 </div>

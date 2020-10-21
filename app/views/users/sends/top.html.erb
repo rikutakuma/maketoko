@@ -1,6 +1,10 @@
 <div class="container store-index">
 	<div class="row">
-		<div class="col-xs-7">
+		<div class="col-xs-8 col-xs-offset-2">
+			<h3>MAKETOKOについて</h3>
+			<p>大阪の小売店専用のSNSです。詳細はAboutページをご覧ください。</p>
+			<p><%= link_to "About", about_path, class: "btn btn-success" %></p>
+
 			<% @sends.each do |send| %>
 				<div class="store-sends">
 					<div class="store_send_top">
@@ -12,13 +16,13 @@
 
 					<div class="store_send_bottom">
 
-						<%= attachment_image_tag send, :send_image, format: "jpeg", size: "300x250", fallback: asset_path("not-image.jpeg"), size:'300x250' %>
+						<%= attachment_image_tag send, :send_image, format: "jpeg", size: "350x280", fallback: asset_path("not-image.jpeg"), size:'350x280' %>
 
 
 						<div class="store-send-bottom-insite">
 							<h4><%= send.title %></h4>
 
-							<p><%= send.send_comment %></p>
+							<p><%= simple_format(h(send.send_comment)) %></p>
 						</div>
 					</div>
 
@@ -30,31 +34,6 @@
 			<% end %>
 		</div>
 
-			<div class="row">
-				<div class="col-xs-5 side-bar">
-
-					<p>MAKETOKOは大阪の小売店に限定したSNSです。</p>
-					<P>店舗様</P>
-					<P>登録頂くと、登録店舗専用ページが作成されます。</P>
-					<P>専用ページでは、タイムラインとサイドバーの投稿が行えます。</P>
-					<p>タイムラインでは、日々のおすすめ情報の発信。</p>
-					<p>サイドバーでは、固定情報を常設できます</p>
-
-					<p>画像</p>
-
-					<p>一般会員様</p>
-					<p>登録頂くと、会員専用ページが作成されます</p>
-					<p>店舗フォロー機能が利用できるようになります。</p>
-					<p>お気に入りの店舗を登録することで、日々の情報をチェックしやすくなります。</p>
-					<p>フォロワー数ランキングや投稿のタグ別検索など、情報を調べやすくなる機能も利用できるようになります。</p>
-
-					<p>画像</p>
-
-					<p>より詳細の概要はAboutページに掲載されております。興味のある方はぜひご確認ください。</p>
-
-
-				</div>
-			</div>
 	</div>
 
 </div>

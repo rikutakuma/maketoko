@@ -1,40 +1,73 @@
 <div class="container send-new">
 	<div class="row">
-    <div class="send-new-title">
-		  <h2>タイムライン新規投稿</h2>
-    </div>
+    <div class="col-xs-8">
+      <div class="send-new-title">
+		    <h2>タイムライン新規投稿</h2>
+      </div>
 
-  		<%= form_for(@send, url:stores_sends_path) do |f| %>
-		    <% if @send.errors.any? %>
-          <div id="error_explanation">
-            <h2>error: <%= @send.errors.count %></h2>
-    		      <ul>
-    				    <% @send.errors.full_messages.each do |message| %>
-      			      <li><%= message %></li>
-    			      <% end %>
-    	        </ul>
-  		     </div>
+  		  <%= form_for(@send, url:stores_sends_path) do |f| %>
+		      <% if @send.errors.any? %>
+            <div id="error_explanation">
+              <h2>error: <%= @send.errors.count %></h2>
+    		        <ul>
+    				      <% @send.errors.full_messages.each do |message| %>
+      			       <li><%= message %></li>
+    			       <% end %>
+                </ul>
+  		      </div>
+  		    <% end %>
+
+  		    <div class="row send-new-image">
+            <h3>画像投稿</h3>
+            <%= attachment_image_tag @send, :send_image, fallback: asset_path("not-image.jpeg"), id: "img_prev",style: "height: 200px; width:200px;" %>
+            <%= f.attachment_field :send_image %>
+  		    </div>
+
+          <div class="row store_send-new-title">
+            <h3>投稿タイトル</h3>
+            <%= f.text_field :title, :size=>"80" %>
+          </div>
+
+  		    <div class="row send-new-comment">
+  		      <h3>投稿内容</h3>
+  		      <%= f.text_area :send_comment, :size=>"80x5" %>
+  		    </div>
+
+  		    <div class="row send-new-submit">
+  		      <%= f.submit "送信", class: "btn btn-success" %>
+  		    </div>
   		  <% end %>
 
-  		  <div class="row send-new-image">
-          <h3>画像投稿</h3>
-  		    <%= f.attachment_field :send_image, placeholder: "画像" %>
-  		  </div>
+        <script>
+          $(function(){
+            $('#send_send_image').on('change', function (e) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+              $(".send_image").attr('src', e.target.result);
+            }
+            reader.readAsDataURL(e.target.files[0]);
+          });
+          });
+        </script>
+    </div>
 
-        <div class="row store_send-new-title">
-          <h3>投稿タイトル</h3>
-          <%= f.text_field :title, :size=>"80" %>
-        </div>
+    <div class="row">
+      <div class="col-xs-4 side-bar">
+        <h3>Tips</h3>
+          <p><strong>投稿内容の入力は必須</strong></p>
+          <p>画像、タイトルは未入力でも投稿可能</p>
+          <p><b>画像上段</b></p><p>タイトルあり</p>
+          <p><b>画像中段</b></p><p>タイトルなし</p>
+          <p><b>画像下段</b></p><p>画像なし</p>
+          <p><img class="sidebar-image" src="<%= asset_path "timeline1.png" %>" width="350" height="200"></p>
 
-  		  <div class="row send-new-comment">
-  		    <h3>投稿内容</h3>
-  		    <%= f.text_area :send_comment, :size=>"80x5" %>
-  		  </div>
+          <p><img class="sidebar-image" src="<%= asset_path "timeline2.png" %>" width="350" height="200"></p>
 
-  		  <div class="row send-new-submit">
-  		    <%= f.submit "送信", class: "btn btn-success" %>
-  		  </div>
-  		<% end %>
+          <p><img class="sidebar-image" src="<%= asset_path "timeline3.png" %>" width="350" height="200"></p>
+
+      </div>
+    </div>
 
   </div>
 </div>
+

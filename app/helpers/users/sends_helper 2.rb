@@ -1,2 +1,0 @@
-module Users::SendsHelper
-end

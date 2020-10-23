@@ -10,7 +10,11 @@
 
 				<div class="col-xs-8 store-index-infomation">
 					<h4><%= @store.corporation_name %>　<%= @store.store_name %></h4>
-					<h5><%= @store.store_introduction %></h5>
+					<h5><%= @store.store_introduction %>
+						<% if @store.store_introduction.blank? %>
+							<p>店舗紹介文はマイページから編集できます。</p>
+						<% end %>
+					</h5>
 					<p>住所<br><%= @store.address %></p>
 					<p>電話番号<br><%= @store.telephone_number %></p>
                		<p>フォロワー数: <i class="fa fa-heart" aria-hidden="true" ></i><%= @store.relationships.count %></p>
@@ -34,7 +38,7 @@
 
 									<div class="store-send-bottom-insite">
 										<h4><%= send.title %></h4>
-										<p><%= send.send_comment %></p>
+										<p><%= simple_format(h(send.send_comment)) %></p>
 									</div>
 								</div>
 									<div class="store_send_edit">
@@ -45,6 +49,7 @@
 									</div>
 							</div>
 						<% end %>
+					<%= paginate @sends %>
 				</div>
 		</div>
 
@@ -56,7 +61,7 @@
 							<h4><%= infomation.titles %></h4>
 								<div class="side-bar-image">
 									<%= link_to stores_infomation_path(infomation.id) do %>
-                						<%= attachment_image_tag infomation, :info_image, size: "250x200", format: 'jpeg' %>
+                						<%= attachment_image_tag infomation, :info_image, size: "300x250", format: 'jpeg' %>
                 					<% end %>
                 				</div>
                 				<p><%= infomation.introduction %></p>

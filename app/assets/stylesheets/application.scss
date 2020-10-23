@@ -21,12 +21,17 @@ body {
 }
 
 .navbar {
+  font-family: "Sawarabi Mincho";
   padding-bottom: 10px;
   border-bottom: 3px solid black;
 }
 
 .navbar-left {
   margin-top: 10px;
+}
+
+.navbar-right {
+  font-size: 18px;
 }
 
 header {
@@ -54,7 +59,10 @@ header {
 
 .Logolink {
   text-decoration: none;
-  color: black;
+}
+
+footer {
+  text-align: right;
 }
 
 .password-edit {
@@ -71,6 +79,46 @@ header {
   border-radius: 5px;
   margin-bottom: 10px;
   padding: 5px;
+}
+
+/////about
+.about {
+  font-family: "Sawarabi Mincho";
+  margin-top: 40px;
+}
+
+.about-image p {
+  font-size: 18px;
+}
+
+.about-info {
+  margin-top: 20px;
+}
+
+.about-info p {
+  font-size: 18px;
+  border-bottom: 1px solid black;
+}
+
+.about1 {
+  margin-top: 20px;
+  border-top: 5px double black;
+}
+
+.about2 {
+  margin-top: 30px;
+  border-top: 5px double black;
+}
+
+.about3 {
+  margin-top: 30px;
+  border-top: 5px double black;
+}
+
+.about4 {
+  margin-top: 30px;
+  margin-bottom: 100px;
+  border-top: 5px double black;
 }
 
 //////////sign_up sign_in
@@ -119,6 +167,7 @@ header {
 //////////store-mypage
 /////store-show
 .store-show {
+  font-family: "Sawarabi Mincho";
   margin-top: 40px;
 }
 
@@ -148,6 +197,7 @@ header {
 
 /////store-unsubscribe
 .store-unsubscribe {
+  font-family: "Sawarabi Mincho";
   margin-top: 40px;
 }
 
@@ -155,6 +205,7 @@ header {
 /////send-index
 
 .store-index {
+  font-family: "Sawarabi Mincho";
   margin-top: 40px;
 }
 
@@ -207,6 +258,7 @@ header {
   font-weight: bold;
   padding: 5px;
   text-align: center;
+  font-size: 20px;
 }
 
 .side-bar-image {
@@ -215,6 +267,7 @@ header {
 
 .store-sidebar-sends p {
   margin-top: 10px;
+  font-size: 18px;
 }
 
 .store-sends {
@@ -228,16 +281,20 @@ header {
   background-color: #25b7c0;
   padding: 5px;
   border-radius: 5px;
+  font-size: 20px;
   }
 
 .store_send_bottom {
   margin: 20px;
   display: flex;
+  font-size: 18px;
 }
 
 .store-send-bottom-insite h4 {
   margin-left: 20px;
   font-weight: bold;
+  background-color: #f19ca7;
+  font-size: 20px;
 }
 
 .store-send-bottom-insite p {
@@ -256,6 +313,7 @@ header {
 /////send-show
 
 .send-show {
+  font-family: "Sawarabi Mincho";
   margin-top: 60px;
 }
 
@@ -263,6 +321,7 @@ header {
   margin: 20px;
   background-color: #25b7c0;
   padding: 5px;
+  font-size: 20px;
 }
 
 .send-show-bottom {
@@ -275,7 +334,11 @@ header {
 }
 
 .send-show-bottom-right h4 {
-  font-weight: bold;
+  font-size: 20px;
+}
+
+.send-show-bottom-right p {
+  font-size: 18px;
 }
 
 .show-send-date {
@@ -289,6 +352,7 @@ header {
 /////send-new
 
 .send-new {
+  font-family: "Sawarabi Mincho";
   margin-top: 60px;
   margin-bottom: 40px;
 }
@@ -320,6 +384,7 @@ margin-top:10px;
 
 /////send-edit
 .send-edit {
+  font-family: "Sawarabi Mincho";
   margin-top: 60px;
 }
 
@@ -332,8 +397,13 @@ margin-top:10px;
   margin-top: 20px;
 }
 
+.store_send-edit-title {
+  font-size: 18px;
+}
+
 .send-edit-comment {
   margin-top: 30px;
+  font-size: 18px;
 }
 
 .send-edit-submit {
@@ -343,6 +413,7 @@ margin-top:10px;
 //////////infomation
 /////infomation-new
 .infomation-new {
+  font-family: "Sawarabi Mincho";
   margin-top: 40px;
 }
 
@@ -374,12 +445,14 @@ margin-top:10px;
 
 /////infomation-show
 .infomation-show {
+  font-family: "Sawarabi Mincho";
   margin-top: 40px;
 }
 
 .infomation-show-title {
   margin-left: 5px;
   margin-top: 10px;
+  font-size: 18px;
 }
 
 .infomation-show-image {
@@ -387,9 +460,10 @@ margin-top:10px;
   margin-top: 10px;
 }
 
-.infomation-show-introduct {
+.infomation-show-introduction {
   margin-left: 5px;
   margin-top: 10px;
+  font-size: 18px;
 }
 
 .infomation-show-edit {
@@ -399,7 +473,14 @@ margin-top:10px;
 
 /////infomation-edit
 .infomation-edit {
+  font-family: "Sawarabi Mincho";
   margin-top: 40px;
+}
+
+.infomation_edit-title {
+  margin-left: 5px;
+  margin-top: 10px;
+  font-size: 18px;
 }
 
 .infomation-edit-image {
@@ -410,7 +491,9 @@ margin-top:10px;
 .infomation-edit-introduct {
   margin-left: 5px;
   margin-top: 10px;
+  font-size: 18px;
 }
+
 .infomation-edit-submit {
   margin-left: 5px;
   margin-top: 10px;
@@ -420,6 +503,7 @@ margin-top:10px;
 //////////user-mypage
 /////user-show
 .user-mypage {
+  font-family: "Sawarabi Mincho";
   margin-top: 40px;
 }
 
@@ -446,6 +530,7 @@ margin-top:10px;
 //////////user-store
 /////user-store-show
 .user-store-index {
+  font-family: "Sawarabi Mincho";
   margin-top: 20px;
   border: 1px solid black;
   border-radius: 5px;
@@ -456,6 +541,7 @@ margin-top:10px;
 
 
 .timeline-follow-box {
+  font-family: "Sawarabi Mincho";
   border: 1px solid black;
   border-radius: 5px;
   padding: 5px;

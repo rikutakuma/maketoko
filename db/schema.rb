@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_12_150033) do
+ActiveRecord::Schema.define(version: 2020_10_21_050746) do
 
   create_table "areas", force: :cascade do |t|
     t.string "area_name", null: false
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 2020_10_12_150033) do
   create_table "sends", force: :cascade do |t|
     t.integer "store_id", null: false
     t.text "send_comment", null: false
-    t.string "send_image_id", null: false
+    t.string "send_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"

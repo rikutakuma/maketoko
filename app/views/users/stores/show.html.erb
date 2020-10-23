@@ -53,15 +53,15 @@
 
 								<div class="store-send-bottom-insite">
 									<h4><%= send.title %></h4>
-									<p><%= send.send_comment %></p>
+									<p><%= simple_format(h(send.send_comment)) %></p>
 								</div>
 						</div>
 							<div class="store_send_create">
 								<p>投稿時間:　<%= l send.created_at %></p>
 							</div>
 					</div>
-
 				<% end %>
+				<%= paginate @sends %>
 			</div>
 		</div>
 

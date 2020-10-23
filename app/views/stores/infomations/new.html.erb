@@ -1,41 +1,67 @@
 <div class="container infomation-new">
 	<div class="row">
-    <div class="infomation-top">
-		<h2>サイドバー新規投稿</h2>
-  </div>
+    <div class="col-xs-8">
+      <div class="infomation-top">
+		  <h2>サイドバー新規投稿</h2>
+    </div>
 
-    <%= form_for(@infomation, url:stores_infomations_path) do |f| %>
-		  <% if @infomation.errors.any? %>
-  			<div id="error_explanation">
-    		  <h2>error: <%= @infomation.errors.count %></h2>
-            <ul>
-    				  <% @infomation.errors.full_messages.each do |message| %>
-      				  <li><%= message %></li>
-    				  <% end %>
-    		    </ul>
-  			</div>
-  		<% end %>
+      <%= form_for(@infomation, url:stores_infomations_path) do |f| %>
+		    <% if @infomation.errors.any? %>
+  			 <div id="error_explanation">
+    		   <h2>error: <%= @infomation.errors.count %></h2>
+              <ul>
+    				    <% @infomation.errors.full_messages.each do |message| %>
+      				    <li><%= message %></li>
+    				   <% end %>
+    		      </ul>
+  			 </div>
+  		  <% end %>
 
-  		<div class="row infomation-new-title">
-        <h3>タイトル</h3>
-        <%= f.text_field :titles, class: "col-xs-6" %>
+  		  <div class="row infomation-new-title">
+          <h3>タイトル</h3>
+            <%= f.text_field :titles, class: "col-xs-6" %>
+        </div>
+
+  	   	<div class="row infomation-new-image">
+         <h3>画像投稿</h3>
+            <%= attachment_image_tag @infomation, :info_image, fallback: asset_path("not-image.jpeg"), id: "img_prev",style: "height: 200px; width:200px;" %>
+            <%= f.attachment_field :info_image %>
+  		  </div>
+
+  		  <div class="row infomation-new-introduct">
+  		    <h3>投稿内容</h3>
+  	       <%= f.text_area :introduction, :size=>"80x5" %>
+  		  </div>
+
+  		  <div class="row infomation-new-submit">
+  			   <%= f.submit "送信", class: "btn btn-success" %>
+  		  </div>
+
+      <% end %>
+
+        <script>
+          $(function(){
+            $('#infomation_info_image').on('change', function (e) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+              $(".info_image").attr('src', e.target.result);
+            }
+            reader.readAsDataURL(e.target.files[0]);
+          });
+          });
+        </script>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-4 side-bar">
+        <h3>Tips</h3>
+          <p>タイトルのみ、画像のみ、投稿内容のみで投稿可能</p>
+          <p><b>タイトルのみ投稿の結果</b></p><p>画像の上側のように赤背景の文字が表示されます</p>
+          <img class="sidebar-image" src="<%= asset_path "sidebar.png" %>" width="350" height="450">
+          <p><b>全要素投稿の結果</b></p><p>画像下側のように全内容が表示されます</p>
+
       </div>
-
-  		<div class="row infomation-new-image">
-        <h3>画像投稿</h3>
-  		  <%= f.attachment_field :info_image, placeholder: "画像" %>
-  		</div>
-
-  		<div class="row infomation-new-introduct">
-  		  <h3>投稿内容</h3>
-  		  <%= f.text_area :introduction, :size=>"80x5" %>
-  		</div>
-
-  		<div class="row infomation-new-submit">
-  			<%= f.submit "送信", class: "btn btn-success" %>
-  		</div>
-
-  	<% end %>
+    </div>
 
   </div>
 </div>

@@ -1,15 +1,20 @@
 <div class="container infomation-edit">
 	<div class="row">
-
 		<%= form_for(@infomation, url:stores_infomation_path) do |f| %>
-			<h2>投稿編集ページ</h2>
+			<h2>サイドバー投稿編集ページ</h2>
+
+				<div class="infomation_edit-title">
+					<h3>投稿タイトル</h3>
+					<%= f.text_field :titles, :size=>"80" %>
+				</div>
 
 				<div class="infomation-edit-image">
+					<%= attachment_image_tag @infomation, :info_image, fallback: asset_path("not-image.jpeg"), id: "img_prev",style: "height: 200px; width:200px;" %>
 					<%= f.attachment_field :info_image %>
 				</div>
 
 				<div class="infomation-edit-introduct">
-					<%= f.text_area :introduction, class: "col-xs-6" %>
+					<%= f.text_area :introduction, :size=>"80x5" %>
 				</div>
 
 				<div class="infomation-edit-submit">
@@ -17,6 +22,18 @@
 				</div>
 
 		<% end %>
+
+		<script>
+          $(function(){
+            $('#infomation_info_image').on('change', function (e) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+              $(".info_image").attr('src', e.target.result);
+            }
+            reader.readAsDataURL(e.target.files[0]);
+          });
+          });
+        </script>
 
 	</div>
 </div>

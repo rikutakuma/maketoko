@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
   </head>
 
   <body>
@@ -15,8 +16,9 @@
     <header class="navbar navbar-fixed-top">
       <div class="container">
       <nav class="nav navbar-nav navbar-left">
-        <img class="logo-image" src="<%= asset_path "logo.jpg" %>" widyh="70" height="70">
-        <span class="Logo"><%= link_to "MAKETOKO", root_path, class: "Logolink" %></span>
+        <%= link_to root_path do %>
+          <img class="logo-image" src="<%= asset_path "logo.jpg" %>" widyh="70" height="70" >
+        <% end %>
       </nav>
 
       <nav>
@@ -28,9 +30,9 @@
 
             <li class="header-link"><%= link_to "ランキング", users_store_ranking_path %></li>
 
-            <li class="header-link"><%= link_to "お気に入り店舗", users_store_follow_path(current_user) %></li>
-
             <li class="header-link"><%= link_to "店舗一覧", users_stores_path %></li>
+
+            <li class="header-link"><%= link_to "お気に入り店舗", users_store_follow_path(current_user) %></li>
 
             <li class="header-link"><%= link_to "マイページ", users_mypage_path %></li>
 
@@ -70,6 +72,10 @@
   </header>
 
     <%= yield %>
+
+  <footer>
+    <p class="footer">© All rights reserved by MAKETOKO.</p>
+  </footer>
 
   </body>
 </html>

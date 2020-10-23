@@ -12,7 +12,7 @@
 
 			<div class="send-show-bottom-right">
 				<h4><%= @send.title %></h4>
-				<p><%= @send.send_comment %></p>
+				<p><%= simple_format(h(@send.send_comment)) %></p>
 			</div>
 		</div>
 

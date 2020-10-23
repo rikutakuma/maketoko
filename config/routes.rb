@@ -23,8 +23,7 @@ Rails.application.routes.draw do
     patch 'stores/information' => 'stores#update', as: 'store_update_information'
     put 'stores/information' => 'stores#update'
     get 'stores/unsubscribe' => 'stores#unsubscribe', as: 'store_confirm_unsubscribe'
-    patch 'stores/leave' => 'stores#leave', as: 'leave_store'
-    put 'stores/leave' => 'stores#leave'
+    delete 'stores/destroy_all' => 'stores#destroy_all', as: 'destroy_all_store'
   end
 
 
@@ -55,8 +54,7 @@ Rails.application.routes.draw do
     patch 'users/information' => 'users#update', as: 'user_update_information'
     put 'users/information' => 'users#update'
     get 'users/unsubscribe' => 'users#unsubscribe', as: 'user_confirm_unsubscribe'
-    patch 'users/leave' => 'users#leave', as: 'leave_user'
-    put 'users/leave' => 'users#leave'
+    delete 'users/leave' => 'users#leave', as: 'leave_user'
 
   end
 

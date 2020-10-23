@@ -7,7 +7,7 @@
 			<div class="store-edit-image">
 				<%= f.label :store_image, "アカウント画像" %>
 				<div class="store-edit-image2">
-				<%= attachment_image_tag @store, :store_image, format: "jpeg", size: "70x70", fallback: asset_("no-image.jpeg"), size: '70x70' %>
+				<%= attachment_image_tag @store, :store_image, format: "jpeg", size: "100x100", fallback: asset_path("no-image.jpeg"), id: "img_prev", size: '100x100' %>
 				</div>
 				<%= f.attachment_field :store_image %>
 			</div>
@@ -49,7 +49,12 @@
 
 				<tr>
 					<td><%= f.label :store_introduction, "店舗紹介" %></td>
-					<td><%= f.text_area :store_introduction, :placeholder =>"#{@store.store_introduction}", :size=>"40x5" %></td>
+					<td><%= f.text_area :store_introduction, :placeholder =>"#{@store.store_introduction}", :size=>"80x5" %></td>
+				</tr>
+
+				<tr>
+					<td><%= f.label :store_area, "店舗地域タグ" %></td>
+					<td><%= f.collection_select :area_id, Area.all, :id, :area_name, :placeholder =>"#{@store.area}"  %></td>
 				</tr>
 
 				<tr>
@@ -60,6 +65,18 @@
 			</div>
 		</table>
 		<% end %>
+
+		<script>
+          $(function(){
+            $('#store_store_image').on('change', function (e) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+              $(".store_image").attr('src', e.target.result);
+            }
+            reader.readAsDataURL(e.target.files[0]);
+          });
+          });
+        </script>
 	</div>
 </div>
 

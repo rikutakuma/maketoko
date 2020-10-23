@@ -17,9 +17,8 @@ class Users::UsersController < ApplicationController
   end
 
   def leave
-    @user.update(is_deleted: true)
-    reset_session
-    redirect_to about_path
+    @user.destroy
+    redirect_to root_path, notice: "ご利用、ありがとうございました。"
   end
 
   def unsubscribe
@@ -28,7 +27,7 @@ class Users::UsersController < ApplicationController
   def timeline
     @user = User.find(params[:id])
     @relationship_stores = @user.relationship_stores
-    @sends = Send.where(store_id: @relationship_stores).order(created_at: :desc)
+    @sends = Send.where(store_id: @relationship_stores).order(created_at: :desc).page(params[:page])
   end
 
   def relationships

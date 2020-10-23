@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :relationships, dependent: :destroy
-  has_many :relationship_stores, through: :relationships, source: :store
+  has_many :relationship_stores, through: :relationships, source: :store, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
   validates :handle_name, presence: true

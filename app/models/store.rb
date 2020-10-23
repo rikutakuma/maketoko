@@ -6,11 +6,12 @@ class Store < ApplicationRecord
 
 
   has_many :infomations, dependent: :destroy
-  has_many :sends, dependent: :destroy
+  has_many :sends, dependent: :delete_all
   has_many :relationships, dependent: :destroy
-
+  belongs_to :area
 
   attachment :store_image
+
 
   validates :corporation_name, presence: true
   validates :store_name, presence: true
@@ -22,9 +23,5 @@ class Store < ApplicationRecord
   def relationshiped_by?(user)
     relationships.where(user_id: user.id).exists?
   end
-
-  
-
-
 
 end

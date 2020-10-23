@@ -7,9 +7,8 @@ class Stores::SendsController < ApplicationController
   end
 
   def index
-
     @store = current_store
-    @sends = @store.sends.order(created_at: :desc)
+    @sends = @store.sends.order(created_at: :desc).page(params[:page])
     @infomations = @store.infomations
   end
 

@@ -4,12 +4,15 @@ class Stores::AreasController < ApplicationController
   end
 
   def create
+  	@area = Area.new
   end
 
   def edit
+  	@area = Area.find(params[:id])
   end
 
   def update
+  	@area = Area.find(params[:id])
   end
   
 end

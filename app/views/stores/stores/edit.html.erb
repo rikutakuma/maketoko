@@ -49,7 +49,12 @@
 
 				<tr>
 					<td><%= f.label :store_introduction, "店舗紹介" %></td>
-					<td><%= f.text_area :store_introduction, :placeholder =>"#{@store.store_introduction}", :size=>"40x5" %></td>
+					<td><%= f.text_area :store_introduction, :placeholder =>"#{@store.store_introduction}", :size=>"80x5" %></td>
+				</tr>
+
+				<tr>
+					<td><%= f.label :store_area, "店舗地域タグ" %></td>
+					<td><%= f.collection_select :area_id, Area.all, :id, :area_name, :placeholder =>"#{@store.area}"  %></td>
 				</tr>
 
 				<tr>

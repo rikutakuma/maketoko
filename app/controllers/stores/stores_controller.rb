@@ -17,13 +17,13 @@ class Stores::StoresController < ApplicationController
     end
   end
 
-  def leave
-    @store.update(is_deleted: true)
-    reset_session
-    redirect_to about_path
+  def destroy_all
+    @store.destroy
+    redirect_to root_path, notice: "ご利用、ありがとうございました。"
   end
 
   def unsubscribe
+
   end
 
   private
@@ -33,7 +33,7 @@ class Stores::StoresController < ApplicationController
   end
 
   def store_params
-    params.require(:store).permit(:corporation_name, :store_name, :email, :postal_code, :address, :telephone_number, :store_introduction, :store_image)
+    params.require(:store).permit(:corporation_name, :store_name, :email, :postal_code, :address, :telephone_number, :store_introduction, :store_image, :area_id)
   end
 
 end

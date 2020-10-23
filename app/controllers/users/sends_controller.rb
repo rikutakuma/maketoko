@@ -2,7 +2,7 @@ class Users::SendsController < ApplicationController
 	before_action :authenticate_user!, only: [:index, :show]
 	def top
 		@store = Store.all
-  		@sends = Send.order(created_at: :desc)
+  		@sends = Send.order(created_at: :desc).page(params[:page])
 	end
 
 	def about

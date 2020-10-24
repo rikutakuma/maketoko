@@ -33,7 +33,8 @@ class Users::UsersController < ApplicationController
   def relationships
     @user = User.find(params[:id])
     @relationship_stores = @user.relationship_stores
-    @random = Store.order("RANDOM()").limit(5)
+    @random = Store.order("RAND()").limit(5)
+    #ローカル環境ではRANDOMにしないとエラーになる
   end
 
   private

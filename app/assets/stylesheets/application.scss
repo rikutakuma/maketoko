@@ -31,7 +31,7 @@ body {
 }
 
 .navbar-right {
-  font-size: 18px;
+  font-size: 14px;
 }
 
 header {
@@ -43,22 +43,8 @@ header {
   border: 1px solid black;
   border-radius: 5px;
   margin-top: 20px;
-  margin-right: 10px;
+  margin-right: 5px;
   background-color: white;
-}
-
-
-.Logo {
-  font-size: 30px;
-  border: 1px solid black;
-  border-radius: 5px;
-  margin-left: 10px;
-  background-color: white;
-  padding: 5px;
-}
-
-.Logolink {
-  text-decoration: none;
 }
 
 footer {
@@ -212,17 +198,14 @@ footer {
 .store-index-info {
   border: 1px solid black;
   border-radius: 5px;
-  padding: 20px;
+  padding: 10px;
 }
 
-.send-top-image {
-  margin-left: 40px;
-  margin: 0 auto;
-}
+
 
 .store-index-infomation h5 {
   border: 1px solid black;
-  padding: 20px;
+  padding: 10px;
   border-radius: 5px;
 }
 
@@ -241,7 +224,7 @@ footer {
 
 .side-bar {
   background-color: #ffe9a9;
-  padding: 20px;
+  padding: 15px;
   border-radius: 5px;
 }
 
@@ -380,6 +363,7 @@ margin-top:10px;
 .send-new-submit {
   margin-top: 20px;
   margin-left: 5px;
+  margin-bottom: 10px;
 }
 
 /////send-edit
@@ -441,6 +425,7 @@ margin-top:10px;
 .infomation-new-submit {
   margin-left: 5px;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 /////infomation-show
@@ -531,7 +516,8 @@ margin-top:10px;
 /////user-store-show
 .user-store-index {
   font-family: "Sawarabi Mincho";
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   border: 1px solid black;
   border-radius: 5px;
   padding: 20px;

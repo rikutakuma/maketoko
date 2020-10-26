@@ -17,53 +17,52 @@
       <div class="container">
       <nav class="nav navbar-nav navbar-left">
         <%= link_to root_path do %>
-          <img class="logo-image" src="<%= asset_path "logo.jpg" %>" widyh="70" height="70" >
+          <img class="logo-image" src="<%= asset_path "logo.jpg" %>" widyh="65" height="65" >
         <% end %>
       </nav>
 
-      <nav>
+        <nav>
 
         <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
 
-            <li class="header-link"><%= link_to "会員トップページ", users_store_timeline_path(current_user) %></li>
+              <li class="header-link"><%= link_to "ホーム", users_store_timeline_path(current_user) %></li>
 
-            <li class="header-link"><%= link_to "ランキング", users_store_ranking_path %></li>
+              <li class="header-link"><%= link_to "ランキング", users_store_ranking_path %></li>
 
-            <li class="header-link"><%= link_to "店舗一覧", users_stores_path %></li>
+              <li class="header-link"><%= link_to "店舗一覧", users_stores_path %></li>
 
-            <li class="header-link"><%= link_to "お気に入り店舗", users_store_follow_path(current_user) %></li>
+              <li class="header-link"><%= link_to "お気に入り", users_store_follow_path(current_user) %></li>
 
-            <li class="header-link"><%= link_to "マイページ", users_mypage_path %></li>
+              <li class="header-link"><%= link_to "マイページ", users_mypage_path %></li>
 
-            <li class="header-link"><%= link_to "ログアウト",  destroy_user_session_path, method: :delete %></li>
+              <li class="header-link"><%= link_to "ログアウト",  destroy_user_session_path, method: :delete %></li>
 
             <% elsif store_signed_in? %>
 
-            <li class="header-link"><%= link_to "店舗トップページ", stores_sends_path %></li>
+              <li class="header-link"><%= link_to "ホーム", stores_sends_path %></li>
 
-            <li class="header-link"><%= link_to "サイドバー投稿ページ", new_stores_infomation_path %></li>
+              <li class="header-link"><%= link_to "タイムライン投稿", new_stores_send_path %></li>
 
-            <li class="header-link"><%= link_to "タイムライン投稿ページ", new_stores_send_path %></li>
+              <li class="header-link"><%= link_to "サイドバー投稿", new_stores_infomation_path %></li>
 
-            <li class="header-link"><%= link_to "マイページ", stores_mypage_path %></li>
+              <li class="header-link"><%= link_to "マイページ", stores_mypage_path %></li>
 
-            <li class="header-link"><%= link_to "ログアウト", destroy_store_session_path, method: :delete %></li>
+              <li class="header-link"><%= link_to "ログアウト", destroy_store_session_path, method: :delete %></li>
 
             <% else %>
 
-            <li class="header-link"><%= link_to "About", about_path %></li>
+              <li class="header-link"><%= link_to "About", about_path %></li>
 
-            <li class="header-link"><%= link_to "一般会員新規登録", new_user_registration_path %></li>
+              <li class="header-link"><%= link_to "会員登録", new_user_registration_path %></li>
 
-            <li class="header-link"><%= link_to "一般会員ログイン", new_user_session_path %></li>
+              <li class="header-link"><%= link_to "会員ログイン", new_user_session_path %></li>
 
-            <li class="header-link"><%= link_to "店舗会員新規登録", new_store_registration_path %></li>
+              <li class="header-link"><%= link_to "店舗登録", new_store_registration_path %></li>
 
-            <li class="header-link"><%= link_to "店舗会員ログイン", new_store_session_path %></li>
+              <li class="header-link"><%= link_to "店舗ログイン", new_store_session_path %></li>
 
             <% end %>
-
 
           </ul>
         </nav>

@@ -1,6 +1,6 @@
 <div class="container store-index">
 	<div class="row">
-		<div class="col-xs-8 col-xs-offset-2">
+		<div class="col-sm-12 col-md-8 col-md-offset-2">
 			<h3>MAKETOKOについて</h3>
 			<p>大阪の小売店専用のSNSです。詳細はAboutページをご覧ください。</p>
 			<p><%= link_to "About", about_path, class: "btn btn-success" %></p>
@@ -16,7 +16,7 @@
 
 					<div class="store_send_bottom">
 
-						<%= attachment_image_tag send, :send_image, format: "jpeg", size: "350x280", fallback: asset_path("not-image.jpeg"), size:'350x280' %>
+						<%= attachment_image_tag send, :send_image, format: "jpeg", size: "350x280", fallback: asset_path("not-image.jpeg"), size:'350x280', class: "img-responsive" %>
 
 
 						<div class="store-send-bottom-insite">

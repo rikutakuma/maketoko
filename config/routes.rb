@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   get "about" => "users/sends#about"
 
   devise_for :stores, controllers: {
-    sessions: 'stores/sessions',
-    passwords: 'stores/passwords',
-    registrations: 'stores/registrations',
+    sessions: "stores/sessions",
+    passwords: "stores/passwords",
+    registrations: "stores/registrations",
   }
 
   namespace :stores do
@@ -18,21 +18,18 @@ Rails.application.routes.draw do
   end
 
   scope module: :stores do
-    get 'stores/mypage' => 'stores#show'
-    get 'stores/information/edit' => 'stores#edit', as: 'store_edit_information'
-    patch 'stores/information' => 'stores#update', as: 'store_update_information'
-    put 'stores/information' => 'stores#update'
-    get 'stores/unsubscribe' => 'stores#unsubscribe', as: 'store_confirm_unsubscribe'
-    delete 'stores/destroy_all' => 'stores#destroy_all', as: 'destroy_all_store'
+    get "stores/mypage" => "stores#show"
+    get "stores/information/edit" => "stores#edit", as: "store_edit_information"
+    patch "stores/information" => "stores#update", as: "store_update_information"
+    put "stores/information" => "stores#update"
+    get "stores/unsubscribe" => "stores#unsubscribe", as: "store_confirm_unsubscribe"
+    delete "stores/destroy_all" => "stores#destroy_all", as: "destroy_all_store"
   end
 
-
-
-
   devise_for :users, controllers: {
-    sessions: 'users/sessions',
-    passwords: 'users/passwords',
-    registrations: 'users/registrations',
+    sessions: "users/sessions",
+    passwords: "users/passwords",
+    registrations: "users/registrations",
   }
 
   namespace :users do
@@ -49,16 +46,12 @@ Rails.application.routes.draw do
   end
 
   scope module: :users do
-    get 'users/mypage' => 'users#show'
-    get 'users/information/edit' => 'users#edit', as: 'user_edit_information'
-    patch 'users/information' => 'users#update', as: 'user_update_information'
-    put 'users/information' => 'users#update'
-    get 'users/unsubscribe' => 'users#unsubscribe', as: 'user_confirm_unsubscribe'
-    delete 'users/leave' => 'users#leave', as: 'leave_user'
+    get "users/mypage" => "users#show"
+    get "users/information/edit" => "users#edit", as: "user_edit_information"
+    patch "users/information" => "users#update", as: "user_update_information"
+    put "users/information" => "users#update"
+    get "users/unsubscribe" => "users#unsubscribe", as: "user_confirm_unsubscribe"
+    delete "users/leave" => "users#leave", as: "leave_user"
 
   end
-
-
-
-
 end

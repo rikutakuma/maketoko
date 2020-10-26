@@ -1,6 +1,5 @@
 class Relationship < ApplicationRecord
 
-
  	belongs_to :user
 	belongs_to :store
 
@@ -9,6 +8,4 @@ class Relationship < ApplicationRecord
 	def relationshiped_by?(user)
     	relationships.where(user_id: user.id).exists?
   	end
-
-
 end

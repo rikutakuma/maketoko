@@ -54,6 +54,9 @@
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/10mEeMV7hmYjUxo0gSDc85a4fUayANUtuyfgQsIhJSQQ/edit?usp=sharing
 
+##ER図
+https://drive.google.com/file/d/1HX_HTKmznrw8xoIBt-o4rKjOxVdkGc3u/view?usp=sharing
+
 ## 開発環境
 ・OS：macOS(Catalina)
 

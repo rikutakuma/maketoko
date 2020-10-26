@@ -9,7 +9,7 @@
 				</div>
 
 				<div class="infomation-edit-image">
-					<%= attachment_image_tag @infomation, :info_image, fallback: asset_path("not-image.jpeg"), id: "img_prev",style: "height: 200px; width:200px;" %>
+					<%= attachment_image_tag @infomation, :info_image, fallback: asset_path("not-image.jpeg"), id: "img_prev",style: "height: 200px; width:200px;", class: "img-responsive" %>
 					<%= f.attachment_field :info_image %>
 				</div>
 

@@ -8,7 +8,7 @@
 
 				<div class="send-edit-image">
 					<h3>画像投稿</h3>
-					<%= attachment_image_tag @send, :send_image, fallback: asset_path("not-image.jpeg"), id: "img_prev",style: "height: 250px; width:300px;" %>
+					<%= attachment_image_tag @send, :send_image, fallback: asset_path("not-image.jpeg"), id: "img_prev",style: "height: 250px; width:300px;", class: "img-responsive" %>
 					<%= f.attachment_field :send_image %>
 				</div>
 

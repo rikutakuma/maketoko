@@ -7,7 +7,7 @@
 
 		<div class="send-show-bottom">
 
-			<%= attachment_image_tag @send, :send_image, format: "jpeg", size: "300x250", fallback: asset_path("not-image.jpeg"), size:'300x250' %>
+			<%= attachment_image_tag @send, :send_image, format: "jpeg", size: "300x250", fallback: asset_path("not-image.jpeg"), size:'300x250', class: "img-responsive" %>
 
 
 			<div class="send-show-bottom-right">

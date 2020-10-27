@@ -1,6 +1,8 @@
 # Maketoko-マケトコ-　
 
 ## サイト概要
+<img width="950" alt="maketoko info" src="https://user-images.githubusercontent.com/69069339/97283445-355cf900-1883-11eb-89c3-8a908aeb7648.png">
+
 大阪の小売店がおすすめ情報をタイムラインで掲載できるSNS。
 
 店側と客側で別の専用アカウントを用意する。

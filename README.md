@@ -3,6 +3,9 @@
 ## サイト概要
 <img width="950" alt="maketoko info" src="https://user-images.githubusercontent.com/69069339/97283445-355cf900-1883-11eb-89c3-8a908aeb7648.png">
 
+## サイト機能
+
+
 ### サイトテーマ
 チラシを見ない層が増えている中での新たな販売促進方法の提案。
 

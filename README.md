@@ -3,7 +3,7 @@
 ## サイト概要
 <img width="950" alt="maketoko info" src="https://user-images.githubusercontent.com/69069339/97283445-355cf900-1883-11eb-89c3-8a908aeb7648.png">
 
-## サイト機能
+## サイト画面
 ![page info](https://user-images.githubusercontent.com/69069339/97285214-47d83200-1885-11eb-889f-504792f14991.jpg)
 
 ### サイトテーマ

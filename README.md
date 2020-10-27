@@ -62,12 +62,7 @@ https://www.designevo.com/
 
 https://icooon-mono.com/
 
-https://fontfree.me/
-
 https://www.pakutaso.com/
 
 https://o-dan.net/ja/
 
-https://morguefile.com/
-
-使用検討中

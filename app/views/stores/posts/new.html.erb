@@ -1,0 +1,69 @@
+<div class="container send-new">
+	<div class="row">
+    <div class="col-sm-12 col-md-8">
+      <div class="send-new-title">
+		    <h2>タイムライン新規投稿</h2>
+      </div>
+
+  		  <%= form_for(@post, url:stores_posts_path) do |f| %>
+		      <% if @post.errors.any? %>
+            <div id="error_explanation">
+              <h2>error: <%= @post.errors.count %></h2>
+    		        <ul>
+    				      <% @post.errors.full_messages.each do |message| %>
+      			       <li><%= message %></li>
+    			       <% end %>
+                </ul>
+  		      </div>
+  		    <% end %>
+
+  		    <div class="row send-new-image">
+            <h3>画像投稿</h3>
+            <%= attachment_image_tag @post, :send_image, fallback: asset_path("not-image.jpeg"), id: "img_prev",style: "height: 200px; width:200px;", class: "img-responsive" %>
+            <%= f.attachment_field :send_image %>
+  		    </div>
+
+          <div class="row store_send-new-title">
+            <h3>投稿タイトル</h3>
+            <%= f.text_field :title, :size=>"80" %>
+          </div>
+
+  		    <div class="row send-new-comment">
+  		      <h3>投稿内容</h3>
+  		      <%= f.text_area :send_comment, :size=>"80x5" %>
+  		    </div>
+
+  		    <div class="row send-new-submit">
+  		      <%= f.submit "送信", class: "btn btn-success" %>
+  		    </div>
+  		  <% end %>
+
+        <script>
+          $(function(){
+            $('#post_send_image').on('change', function (e) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+              $(".send_image").attr('src', e.target.result);
+            }
+            reader.readAsDataURL(e.target.files[0]);
+          });
+          });
+        </script>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-4 side-bar">
+        <h3>Tips</h3>
+          <p><strong>画像と投稿内容の入力は必須です。</strong></p>
+          <p>タイトルは未入力でも投稿可能</p>
+          <p>タイトルあり</p>
+          <p><img class="sidebar-image" src="<%= asset_path "timeline1.png" %>" width="350" height="200" class="img-responsive" ></p>
+          <p>タイトルなし</p>
+          <p><img class="sidebar-image" src="<%= asset_path "timeline2.png" %>" width="350" height="200" class="img-responsive"></p>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+

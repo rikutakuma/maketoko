@@ -1,3 +1,4 @@
+
 class Stores::StoresController < ApplicationController
   before_action :authenticate_store!
   before_action :set_current_store
@@ -33,7 +34,7 @@ class Stores::StoresController < ApplicationController
   end
 
   def store_params
-    params.require(:store).permit(:corporation_name, :store_name, :email, :postal_code, :address, :telephone_number, :store_introduction, :store_image, :area_id)
+    params.require(:store).permit(:corporation_name, :store_name, :email, :postal_code, :address, :telephone_number, :store_introduction, :store_image, :area_id, :latitude, :longitude)
   end
 
 end

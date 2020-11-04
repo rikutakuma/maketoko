@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  root "users/sends#top"
-  get "about" => "users/sends#about"
+  root "users/posts#top"
+  get "about" => "users/posts#about"
 
   devise_for :stores, controllers: {
     sessions: "stores/sessions",
@@ -10,11 +10,12 @@ Rails.application.routes.draw do
   }
 
   namespace :stores do
-    resources :sends, except: [:destroy]
+    #resources :sends, except: [:destroy] 予約語を使用していたためpostを新しく制作
+    resources :posts, except: [:destroy]
     resources :genres, only: [:index, :create, :edit, :update]
     resources :areas, only: [:index, :create, :edit, :update]
     resources :infomations, only: [:new, :create, :edit, :show, :update, :destroy]
-    delete "sends/:id/delete" => "sends#delete"
+    delete "posts/:id/delete" => "posts#delete"
   end
 
   scope module: :stores do
@@ -40,7 +41,8 @@ Rails.application.routes.draw do
     get "users/:id/timeline" => "users#timeline", as: "store_timeline"
     get "users/relationship_ranking" => "stores#relationship_ranking", as: "store_ranking"
     get "users/:area_id/area_ranking" => "stores#area_ranking", as: "area_ranking"
-    resources :sends, only: [:index, :show]
+    #resources :sends, only: [:index, :show]　上記と同じ
+    resources :posts, only: [:index, :show]
     resources :users, only: [:index]
 
   end
@@ -54,4 +56,26 @@ Rails.application.routes.draw do
     delete "users/leave" => "users#leave", as: "leave_user"
 
   end
+
+  devise_for :admins, controllers: {
+    sessions: "admins/sessions"
+  }
+
+  namespace :admins do
+    resources :stores, only: [:index, :show]
+    resources :users, only: [:index, :show, :destroy]
+    delete "stores/:id/destroy_all" => "stores#destroy_all"
+    resources :areas
+  end
+
 end
+
+
+
+
+
+
+
+
+
+

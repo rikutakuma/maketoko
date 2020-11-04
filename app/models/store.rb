@@ -5,7 +5,8 @@ class Store < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :infomations, dependent: :destroy
-  has_many :sends, dependent: :delete_all
+  has_many :posts, dependent: :delete_all
+
   has_many :relationships, dependent: :destroy
   belongs_to :area
 
@@ -17,6 +18,9 @@ class Store < ApplicationRecord
   validates :postal_code, presence: true, format: { with: /\A\d{7}\z/ }
   validates :address, presence: true
   validates :telephone_number, presence: true, format: { with: /\A\d{10,11}\z/ }
+
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
 
   def relationshiped_by?(user)
     relationships.where(user_id: user.id).exists?

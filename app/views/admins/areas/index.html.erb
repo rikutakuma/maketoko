@@ -1,0 +1,39 @@
+<div class="container">
+	<h2>エリア一覧・追加</h2>
+		<%= form_for @area, url:admins_areas_path do |f| %>
+			<%= f.label "エリア" %> <%= f.text_field :area_name %>
+				<label><%= f.radio_button :is_active, "true" %>有効</label>
+				<label><%= f.radio_button :is_active, "false" %>無効</label>
+				<button class="btn btn-primary">追加</button>
+			<% end %>
+			<%= flash[:notice] %>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>エリア名</th>
+					<th>状態</th>
+					<th></th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<% @areas.each do |area| %>
+					<tr>
+						<th><%= area.id %></th>
+						<th><%= area.area_name %></th>
+						<th>
+							<% if area.is_active == true %>
+								有効
+							<% else %>
+								無効
+							<% end %>
+						</th>
+						<th><%= link_to "編集", edit_admins_area_path(area) %></th>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+</div>
+

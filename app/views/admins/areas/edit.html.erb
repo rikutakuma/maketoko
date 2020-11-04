@@ -1,0 +1,11 @@
+<div class="container">
+	<h2>エリア編集</h2>
+		<%= form_for(@area, url: {controller: "areas", action: "update"}) do |f|  %>
+			<p>エリア</p><%= f.text_field :area_name %>
+				<label><%= f.radio_button :is_active, "true" %>有効</label>
+				<label><%= f.radio_button :is_active, "false" %>無効</label>
+				<button class="btn btn-primary">変更を保存する</button>
+		<% end %>
+
+		<%= link_to "削除する", admins_area_path, method: :delete, "data-confirm" => "OKを押すとエリアが削除されます。本当によろしいですか？", class: "btn btn-danger" %>
+</div>

@@ -36,42 +36,77 @@
 			</div>
 
 			<div class="col-xs-12 col-md-12 store_send-index">
-				<% @sends.each do |send| %>
+				<% @posts.each do |post| %>
 					<div class="store-sends">
 						<div class="store_send_top">
 
-							<%= attachment_image_tag send.store, :store_image, format: "jpeg", size: "50x50", fallback: asset_path("no-image.jpeg"), size:'50x50' %>
+							<%= attachment_image_tag post.store, :store_image, format: "jpeg", size: "50x50", fallback: asset_path("no-image.jpeg"), size:'50x50' %>
 
-							<%= send.store.corporation_name %>　<%= send.store.store_name %>
+							<%= post.store.corporation_name %>　<%= post.store.store_name %>
 						</div>
 
 						<div class="store_send_bottom">
 
-							<%= attachment_image_tag send, :send_image, format: "jpeg", size: "300x250", fallback: asset_path("not-image.jpeg"), size:'300x250', class: "img-responsive" %>
+							<%= attachment_image_tag post, :send_image, format: "jpeg", size: "300x250", fallback: asset_path("not-image.jpeg"), size:'300x250', class: "img-responsive" %>
 
 								<div class="store-send-bottom-insite">
-									<h4><%= send.title %></h4>
-									<p><%= simple_format(h(send.send_comment)) %></p>
+									<h4><%= post.title %></h4>
+									<p><%= simple_format(h(post.send_comment)) %></p>
 								</div>
 						</div>
+							<div>
+								<% post.tags.each do |tag| %>
+        							<span class="label"><%= tag.name %></span>
+      							<% end %>
+							</div>
+
 							<div class="store_send_create">
-								<p>投稿時間:　<%= l send.created_at %></p>
+								<p>投稿時間:　<%= l post.created_at %></p>
 							</div>
 					</div>
 				<% end %>
-				<%= paginate @sends %>
+				<%= paginate @posts %>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-xs-12 col-md-4 side-bar">
+				<div id="map"></div>
+				<script type="text/javascript">
+					function initMap() {
+						var test ={lat: <%= @store.latitude %>, lng: <%= @store.longitude %>};
+						var map = new google.maps.Map(document.getElementById("map"), {
+							zoom: 15,
+							center: test
+						});
+						var transitLayer = new google.maps.TransitLayer();
+						transitLayer.setMap(map);
+						var contentString = "住所:<%= @store.address %>";
+						var infowindow = new google.maps.InfoWindow({
+							content: contentString
+						});
+						var marker = new google.maps.Marker({
+							position:test,
+							map: map,
+							title: contentString
+						});
+						marker.addListener("click", function() {
+							infowindow.open(map, marker);
+						});
+					}
+				</script>
+
+			    <script async defer
+			    src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%=ENV['GOOGLE_API_KEY'] %>&callback=initMap">
+				</script>
+
 				<% @infomations.each do |infomation| %>
 					<div class="store-sidebar-sends">
 						<h4><%= infomation.titles %></h4>
 					<div class="side-bar-image">
                 		<%= attachment_image_tag infomation, :info_image, size: "250x200", format: 'jpeg' %>
              	    </div>
-                		<p><%= infomation.introduction %></p>
+                		<p><%= simple_format(h(infomation.introduction)) %></p>
                 	</div>
               	<% end %>
 			</div>

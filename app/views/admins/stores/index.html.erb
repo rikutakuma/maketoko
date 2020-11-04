@@ -1,0 +1,35 @@
+<div class="container">
+<h2>店舗一覧</h2>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>会社名</th>
+				<th>店舗名</th>
+				<th>エリア</th>
+				<th>住所</th>
+				<th>郵便番号</th>
+				<th>電話番号</th>
+				<th>詳細</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% @stores.each do |store| %>
+				<tr>
+					<th><%= store.id %></th>
+					<th><%= store.corporation_name %></th>
+					<th><%= store.store_name %></th>
+					<th><%= store.area_id %></th>
+					<th><%= store.address %></th>
+					<th><%= store.postal_code %></th>
+					<th><%= store.telephone_number %></th>
+					<th><%= link_to "詳細", admins_store_path(store) %></th>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+
+
+

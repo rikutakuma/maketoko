@@ -27,7 +27,8 @@ class Users::UsersController < ApplicationController
   def timeline
     @user = User.find(params[:id])
     @relationship_stores = @user.relationship_stores
-    @sends = Send.where(store_id: @relationship_stores).order(created_at: :desc).page(params[:page])
+    @posts = Post.where(store_id: @relationship_stores).order(created_at: :desc).page(params[:page])
+
   end
 
   def relationships

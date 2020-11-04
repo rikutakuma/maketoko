@@ -16,7 +16,7 @@ class Stores::InfomationsController < ApplicationController
     @infomation.store_id = current_store.id
 
     if @infomation.save
-      redirect_to stores_sends_path(@send)
+      redirect_to stores_posts_path(@post)
     else
       render "new"
     end
@@ -29,7 +29,7 @@ class Stores::InfomationsController < ApplicationController
   def update
     @infomation = Infomation.find(params[:id])
     if @infomation.update(infomation_params)
-      redirect_to stores_sends_path(@send)
+      redirect_to stores_posts_path(@post)
     else
       render "edit"
     end
@@ -38,7 +38,7 @@ class Stores::InfomationsController < ApplicationController
   def destroy
     @infomation = Infomation.find_by(id: params[:id])
     @infomation.destroy
-      redirect_to stores_sends_path(@send)
+      redirect_to stores_posts_path(@post)
   end
 
   private
@@ -50,7 +50,7 @@ class Stores::InfomationsController < ApplicationController
   def ensure_correct_store
     @infomation = Infomation.find(params[:id])
     if current_store != @infomation.store
-      redirect_to stores_sends_path
+      redirect_to stores_posts_path
     end
   end
 end

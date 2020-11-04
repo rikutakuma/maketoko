@@ -1,0 +1,32 @@
+<div class="container">
+<h2>会員アカウント管理</h2>
+	<%= link_to "削除する", admins_user_path, method: :delete, "data-confirm" => "OKを押すと退会処理がされます。本当によろしいですか？", class: "btn btn-danger" %>
+<h3>会員お気に入り登録店舗一覧</h3>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>店舗画像</th>
+				<th>会社名</th>
+				<th>店舗名</th>
+				<th>エリアID</th>
+				<th>住所</th>
+				<th>郵便番号</th>
+				<th>電話番号</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% @relationship_stores.each do |r_store| %>
+				<tr>
+					<th><%= attachment_image_tag r_store, :store_image, format: "jpeg", size: "40x40", fallback: asset_path("no-image.jpeg"), size:'40x40' %></th>
+					<th><%= r_store.corporation_name %></th>
+					<th><%= r_store.store_name %></th>
+					<th><%= r_store.area_id %></th>
+					<th><%= r_store.address %></th>
+					<th><%= r_store.postal_code %></th>
+					<th><%= r_store.telephone_number %></th>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

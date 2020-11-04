@@ -6,10 +6,10 @@ class Users::StoresController < ApplicationController
 
     if params[:area_id]
       @area = Area.find(params[:area_id])
-      @stores = @area.stores.page(params[:page])
+      @stores = @area.stores.order("corporation_name").page(params[:page])
       @stores_count = @area.stores.count
     else
-      @stores = Store.all.page(params[:page])
+      @stores = Store.all.order("corporation_name").page(params[:page])
       @stores_count = Store.count
     end
   end
@@ -17,7 +17,7 @@ class Users::StoresController < ApplicationController
   def show
     @user = current_user
     @store = Store.find(params[:id])
-    @sends = @store.sends.order(created_at: :desc).page(params[:page]).per(10)
+    @posts = @store.posts.order(created_at: :desc).page(params[:page]).per(10)
     @infomations = @store.infomations
   end
 

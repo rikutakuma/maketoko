@@ -51,7 +51,7 @@ https://drive.google.com/file/d/1HX_HTKmznrw8xoIBt-o4rKjOxVdkGc3u/view?usp=shari
 ## 開発環境
 ・OS：Linux(CentOS)
 
-・言語：HTML, CSS, Ruby
+・言語：HTML, CSS, Ruby, JavaScript
 
 ・フレームワーク：Ruby on Rails
 
